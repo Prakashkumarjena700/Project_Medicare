@@ -25,7 +25,6 @@ import {
   AccordionItem,
 } from "@chakra-ui/react";
 import { useState } from "react";
-import { CheckIcon } from "@chakra-ui/icons";
 import { FaMedium, FaTwitterSquare, FaYoutubeSquare } from "react-icons/fa";
 import { GrFacebook, GrLinkedin } from "react-icons/gr";
 

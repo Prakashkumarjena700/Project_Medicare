@@ -1,17 +1,14 @@
 
 import "./App.css";
-import Productpage from "./Components/ProductPage/Productpage";
+import Footer from "./Components/Footer/Footer";
 import AllRoutes from "./Router/AllRoutes";
+
 
 function App() {
   return (
     <div className="App">
       <AllRoutes />
-
-     
-      {/* <Footer/> */}
-
-      {/* <Productpage /> */}
+      <Footer/>
 
     </div>
   );
