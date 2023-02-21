@@ -1,5 +1,5 @@
 const express = require("express")
-
+const cors = require('cors')
 const { connection } = require("./config/db")
 const { userRoute } = require("./routes/user.route")
 const { productRoute } = require("./routes/product.route")
@@ -11,6 +11,7 @@ const { authenticate } = require("./middlewares/authenticate.middleware")
 
 const app = express()
 app.use(express.json())
+app.use(cors())
 
 app.get("/", async (req, res) => {
     const { q, limit, skip, sort, order, brand, uses } = req.query
