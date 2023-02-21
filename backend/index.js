@@ -13,7 +13,7 @@ const app = express()
 app.use(express.json())
 app.use(cors())
 
-app.get("/", async (req, res) => {
+app.get("/data", async (req, res) => {
     const { q, limit, skip, sort, order, brand, uses } = req.query
 
     const query = { name: { $regex: q, $options: "i" } }
@@ -64,7 +64,7 @@ app.get("/", async (req, res) => {
 })
 
 
-app.get("/:_id", async (req, res) => {
+app.get("/data/:_id", async (req, res) => {
     const { _id } = req.params
     try {
         const data = await productModel.find({ _id })
