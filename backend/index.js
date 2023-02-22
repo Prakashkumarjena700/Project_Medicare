@@ -8,6 +8,7 @@ const { cartRoute } = require("./routes/cart.route")
 const { productModel } = require("./models/product.model")
 
 const { authenticate } = require("./middlewares/authenticate.middleware")
+const { adminRoute } = require("./routes/admin.route")
 
 const app = express()
 app.use(express.json())
@@ -75,10 +76,10 @@ app.get("/data/:_id", async (req, res) => {
 })
 
 app.use("/users", userRoute)
+app.use("/admin",adminRoute)
 app.use(authenticate)
 app.use("/products", productRoute)
 app.use("/cart", cartRoute)
-
 
 
 app.listen(4500, async () => {
