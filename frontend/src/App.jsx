@@ -1,13 +1,16 @@
 
 import "./App.css";
 import Footer from "./Components/Footer/Footer";
+
 import AllRoutes from "./Router/AllRoutes";
 
 
 function App() {
   return (
     <div className="App">
-      <AllRoutes />
+  
+       
+        <AllRoutes />
       <Footer/>
 
     </div>
