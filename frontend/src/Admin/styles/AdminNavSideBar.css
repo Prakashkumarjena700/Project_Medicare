@@ -1,0 +1,19 @@
+.logo{
+    width:20%;
+    height:10%;
+    border:0px solid black
+}
+
+#nav{
+    position: fixed;
+    width:100%
+}
+
+.logosmall{
+    width:50%;
+    height:40%;
+    border:0px solid black;
+    display: block;
+    margin: auto;
+}
+
