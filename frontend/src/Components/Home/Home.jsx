@@ -67,9 +67,10 @@ export default function Home() {
       >
         Tata 1mg: India’s Leading Online Pharmacy & Healthcare Platform
       </Text>
-    </Box>
+    
 
     <HomeProductBox />
+    </Box>
     <UpperFooter />
   </Box>
   )

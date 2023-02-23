@@ -21,8 +21,14 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
     },
   };
 
+
+  const handleClick=(id)=>{
+    console.log(id)
+  }
+
   return (
-    <Box bg="white" p="1rem">
+    <Box backgroundColor="#ffffff">
+    <Box bg="white" p="1rem" w="80%" m="auto" h="300px">
       <Carousel
         swipeable={true}
         draggable={true}
@@ -40,7 +46,6 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
       >
         {something.map((e, i) => (
           <Box
-            h={"100%"}
             p="0.5rem"
             key={i}
             textAlign="left"
@@ -51,18 +56,19 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
                 "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
             }}
             cursor="pointer"
+            onClick={()=>handleClick(e._id)}
           >
-            <Image h={"40%"} w={"40%"} m="auto" src={e.img} />
+            <Image h={"50%"} w={"50%"} m="auto" src={e.img1} />
             <Box>
               <Text fontSize={"15px"}>{e.name}</Text>
-              <Text fontSize={"13px"}>{e.qty}</Text>
+              <Text fontSize={"13px"}>{e.form}</Text>
               <Text>
-                MRP{" "}
+                {/* MRP{" "}
                 <span style={{ textDecoration: "line-through" }}>
-                  ₹{e.strikePrice}
-                </span>
+                  ₹{e.price}
+                </span> */}
                 <span style={{ color: "green", marginLeft: "1rem" }}>
-                  {e.discount}
+                  {e.rating}
                 </span>
               </Text>
               <Text fontWeight={"600"}>₹ {e.price}</Text>
@@ -70,6 +76,7 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
           </Box>
         ))}
       </Carousel>
+    </Box>
     </Box>
   );
 };
