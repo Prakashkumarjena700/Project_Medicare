@@ -1,9 +1,16 @@
-import React from 'react'
+import { 
+FormControl,
+Input,
+Box 
+} from '@chakra-ui/react';
 
-const AddProduct = () => {
+import './styles/Inventory.css'
+
+export default function AddProduct() {
+
   return (
-    <div>AddProduct</div>
-  )
-}
+    <Box  className='abc' >
 
-export default AddProduct
+    </Box>
+  );
+}

@@ -6,7 +6,7 @@ const bcrypt = require('bcrypt');
 const userRoute = express.Router()
 
 userRoute.post("/register", async (req, res) => {
-    const { username, email, password, type } = req.body
+    const { username, email, password, gender, number } = req.body
     try {
         const user = await userModel.find({ email })
         if (user.length > 0) {
@@ -17,7 +17,7 @@ userRoute.post("/register", async (req, res) => {
                 if (err) {
                     res.send("Something went wrong")
                 } else {
-                    const user = new userModel({ username, email, password: hash, type })
+                    const user = new userModel({ username, email, password: hash, gender, number })
                     await user.save()
                     res.send({ "msg": "new user has been register" })
                 }
