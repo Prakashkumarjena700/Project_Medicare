@@ -1,6 +1,8 @@
 import React from 'react'
 import { Route, Routes } from 'react-router-dom'
+
 import Home from '../Components/Home/Home'
+
 import Admin from "../Admin/Admin"
 import AdminSignin from '../Admin/AdminSignin'
 export default function AllRoutes() {

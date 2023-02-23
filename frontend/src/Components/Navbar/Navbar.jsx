@@ -24,6 +24,7 @@ import {
   import { FaShoppingCart } from "react-icons/fa";
   import { NavLink } from "react-router-dom";
   import Logo from "../Logo/logo-color.png"
+  import SearchBar from './SearchBar';
 
   const NAV_ITEMS = [
     {
@@ -164,7 +165,13 @@ import {
         <Collapse in={isOpen} animateOpacity>
           <MobileNav />
         </Collapse>
+
+         {/* HERE SEARCH BAR  */}
+         
+        <SearchBar/>
       </Box>
+     
+      
     );
   }
   
