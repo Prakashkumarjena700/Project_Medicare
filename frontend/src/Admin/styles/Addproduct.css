@@ -1,0 +1,15 @@
+.ip{
+    border: 1px solid blue;
+    margin-top: 20px;
+
+}
+
+.ip :hover{
+    border: 1px solid blue;
+}
+
+.abc{
+    border: 1px solid red;
+    width:25%;
+    margin-left: 20%;
+}

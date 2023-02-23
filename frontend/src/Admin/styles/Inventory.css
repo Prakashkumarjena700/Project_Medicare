@@ -1,0 +1,39 @@
+.one{
+    width:75%;
+    margin-left: 10%;
+    /* background-color: rgb(43, 42, 42); */
+}
+
+.two{
+    color: black;
+    background-color: gray;
+}
+.head{
+    background-color: rgb(15, 15, 15);
+   
+}
+
+
+.three{
+    color:#fe0039;
+     background-color: rgb(15, 15, 15);
+}
+
+.ip{
+    border: 1px solid blue;
+    margin-top: 20px;
+    height:80px;
+    width:40px;
+    color: black;
+
+}
+
+.ip :hover{
+    border: 1px solid blue;
+}
+
+.abc{
+    border: 1px solid red;
+    width:40%;
+    margin-left: 35%;
+}
