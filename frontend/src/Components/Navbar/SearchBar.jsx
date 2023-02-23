@@ -11,6 +11,7 @@ import {
   } from "@chakra-ui/react";
   import React from "react";
   import { FaSearch, FaSearchLocation } from "react-icons/fa";
+  import { NavLink } from "react-router-dom";
   
   function SearchBar() {
     return (
@@ -48,6 +49,7 @@ import {
   
           <Flex gap={2} align="center" display={{ base: "none", md: "flex" }}>
             <Text fontSize={"14px"}>QUICK BUY! Get 25% off on medicines*</Text>
+            <NavLink to="/admin">
             <Button
               px="30px"
               bg={"#ff6f61"}
@@ -58,8 +60,9 @@ import {
               _hover={{}}
               py="0px"
             >
-              Quick Order
+              ADMIN
             </Button>
+            </NavLink>
           </Flex>
         </Flex>
       </Box>
