@@ -4,7 +4,7 @@ import React from "react";
 const Upperfooter = () => {
   return (
     <Box
-      mt="5rem"
+      mt="2rem"
       bg="#f6f6f6"
       fontSize={"18px"}
       fontWeight="400"

@@ -11,15 +11,57 @@ const HomeProductBox = () => {
 
   // https://glamorous-jumpsuit.cyclic.app/data/
   const [data,setData]=React.useState([])
-
+  const[baidya,setBaidya]=React.useState([])
+  const [dabur,setDabur]=React.useState([])
+  const[eye,setEye]=React.useState([])
+  const[liver,setLiver]=React.useState([])
 
   const fetchData=()=>{
     return axios.get(`https://glamorous-jumpsuit.cyclic.app/data`)
   }
 
+  const fetchData1=()=>{
+    return axios.get(`https://glamorous-jumpsuit.cyclic.app/data?brand=Baidyanath`)
+  }
+
+  const fetchData2=()=>{
+    return axios.get(`https://glamorous-jumpsuit.cyclic.app/data?brand=Dabur`)
+  }
+
+  const fetchData3=()=>{
+    return axios.get(`https://glamorous-jumpsuit.cyclic.app/data?uses=Eye Care`)
+  }
+
+  const fetchData4=()=>{
+    return axios.get(`https://glamorous-jumpsuit.cyclic.app/data?uses=Liver Care`)
+  }
   React.useEffect(()=>{
    fetchData().then((res)=>{
     setData(res.data)
+    // console.log(res.data)
+
+   }).catch((err)=>console.log(err))
+
+   fetchData1().then((res)=>{
+    setBaidya(res.data)
+    // console.log(res.data)
+
+   }).catch((err)=>console.log(err))
+
+   fetchData2().then((res)=>{
+    setDabur(res.data)
+    // console.log(res.data)
+
+   }).catch((err)=>console.log(err))
+
+   fetchData3().then((res)=>{
+    setEye(res.data)
+    console.log(res.data)
+
+   }).catch((err)=>console.log(err))
+
+   fetchData4().then((res)=>{
+    setLiver(res.data)
     console.log(res.data)
 
    }).catch((err)=>console.log(err))
@@ -107,12 +149,13 @@ const HomeProductBox = () => {
                 width="fit-content"
                 color="white"
                 fontSize={"14px"}
+                mb="0.5rem"
               >
                 SEE ALL
               </Button>
             </Link>
           </Box>
-          <ProductsCard something={data.slice(27,39)} />
+          <ProductsCard something={baidya} />
         </Box>
   
         <Box mt="2rem">
@@ -154,7 +197,7 @@ const HomeProductBox = () => {
             w="80%" m="auto" 
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
-              Baidyanath | supplement of the week
+              Liver Care
             </Text>
             <Link href="http://localhost:3000/allProducts" target="_blank">
               <Button
@@ -163,13 +206,15 @@ const HomeProductBox = () => {
                 width="fit-content"
                 color="white"
                 fontSize={"14px"}
+                mb="0.5rem"
               >
                 SEE ALL
               </Button>
             </Link>
           </Box>
-          <ProductsCard something={data.slice(0,9)} />
+          <ProductsCard something={liver} />
         </Box>
+       
   
         {/* brands */}
   
@@ -213,6 +258,7 @@ const HomeProductBox = () => {
                 width="fit-content"
                 color="white"
                 fontSize={"14px"}
+                mb="0.5rem"
               >
                 SEE ALL
               </Button>
@@ -232,7 +278,7 @@ const HomeProductBox = () => {
             w="80%" m="auto"
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
-              Top Sellers From Ensure
+              Super Saving Deals
             </Text>
             <Link href="http://localhost:3000/allProducts" target="_blank">
               <Button
@@ -241,13 +287,42 @@ const HomeProductBox = () => {
                 width="fit-content"
                 color="white"
                 fontSize={"14px"}
+                mb="0.5rem"
               >
                 SEE ALL
               </Button>
             </Link>
           </Box>
-          <ProductsCard something={data.slice(19,27)} />
+          <ProductsCard something={data.slice(36,45)} />
         </Box>
+
+        <Box mt="2rem">
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            px="2rem"
+            mb="0.5rem"
+            w="80%" m="auto" 
+          >
+            <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
+              Eye Care
+            </Text>
+            <Link href="http://localhost:3000/allProducts" target="_blank">
+              <Button
+                bgColor="#ff6f61"
+                _hover={{ bg: "#ff6f61" }}
+                width="fit-content"
+                color="white"
+                fontSize={"14px"}
+                mb="0.5rem"
+              >
+                SEE ALL
+              </Button>
+            </Link>
+          </Box>
+          <ProductsCard something={eye} />
+        </Box>
+  
   
         {/* brands */}
         <Box mt="2rem">
@@ -271,6 +346,33 @@ const HomeProductBox = () => {
         </Box>
   
         {/* Products */}
+
+        <Box mt="2rem">
+          <Box
+            display="flex"
+            justifyContent="space-between"
+            px="2rem"
+            mb="0.5rem"
+            w="80%" m="auto" 
+          >
+            <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
+              Dabur | Deal of the Day
+            </Text>
+            <Link href="http://localhost:3000/allProducts" target="_blank">
+              <Button
+                bgColor="#ff6f61"
+                _hover={{ bg: "#ff6f61" }}
+                width="fit-content"
+                color="white"
+                fontSize={"14px"}
+                mb="0.5rem"
+              >
+                SEE ALL
+              </Button>
+            </Link>
+          </Box>
+          <ProductsCard something={dabur} />
+        </Box>
   
       
       </Box>
@@ -359,134 +461,7 @@ const HomeProductBox = () => {
   
 
   
-  //  const topSellingProducts = [
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-kamini-vidrawan-ras-keshar-yukta-tablet-otc560948",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/tlfgbykcqbhn5jieozfj.jpg",
-  //     name: "Baidyanath Kamini Vidrawan Ras Keshar Yukta Tablet",
-  //     qty: "bottle of 10 gm Tablet",
-  //     strikePrice: "1698",
-  //     discount: "20% off",
-  //     price: "1358",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-vansaar-isabgol-psyllium-husk-powder-otc371516",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/hb574zgh9ypwmpel9mxz.jpg",
-  //     name: "Baidyanath Vansaar Isabgol Psyllium Husk Powder",
-  //     qty: "box of 200 gm Powder",
-  //     strikePrice: "225",
-  //     discount: "14% off",
-  //     price: "193",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-kesari-kalp-royal-chyawanprash-promotes-vitality-strength-stamina-otc325914",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/wxcyaombrajpkyvcvnrm.jpg",
-  //     name: "Baidyanath Kesari Kalp Royal Chyawanprash Promotes Vitality, Strength & Stamina",
-  //     qty: "jar of 1 kg Paste",
-  //     strikePrice: "740",
-  //     discount: "30% off",
-  //     price: "518",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-kanchnar-guggulu-tablet-otc325867",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/zd02vxwzldjojodryrbk.jpg",
-  //     name: "Baidyanath Kanchnar Guggulu Tablet",
-  //     qty: "bottle of 80 tablets",
-  //     strikePrice: "140",
-  //     discount: "14% off",
-  //     price: "120",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-chyawanprash-special-immunity-booster-for-omniprotection-with-madhu-free-50gm-otc698062",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/r4q79nrsaa1tfaxfvbn7.jpg",
-  //     name: "Baidyanath Chyawanprash Special Immunity Booster for OmniProtection with Madhu Free 50gm",
-  //     qty: "jar of 950 gm Paste",
-  //     strikePrice: "395",
-  //     discount: "15% off",
-  //     price: "336",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-vita-ex-massage-oil-otc349340",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/yrlsaq5pmpkpmu0u0cqd.jpg",
-  //     name: "Baidyanath Vita EX Massage Oil",
-  //     qty: "bottle of 15 ml Oil",
-  //     strikePrice: "225",
-  //     discount: "15% off",
-  //     price: "191",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-kesari-kalp-royal-chyawanprash-promotes-vitality-strength-stamina-otc388303",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/sotrimm6r6qrtbt5qtmw.jpg",
-  //     name: "Baidyanath Kesari Kalp Royal Chyawanprash Promotes Vitality, Strength & Stamina",
-  //     qty: "jar of 500 gm Paste",
-  //     strikePrice: "420",
-  //     discount: "14% off",
-  //     price: "361",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-chyawan-vit-sugarfree-chyawanprash-for-boosting-immunity-otc337211",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/crqoyzk9fbxvdpdk2efj.png",
-  //     name: "Baidyanath Chyawan-Vit Sugarfree Chyawanprash for Boosting Immunity",
-  //     qty: "jar of 500 gm Paste",
-  //     strikePrice: "225",
-  //     discount: "15% off",
-  //     price: "191",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-vansaar-aloe-vera-juice-otc349149",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/lc0ysjyol0asm5eeoxut.jpg",
-  //     name: "Baidyanath Vansaar Aloe Vera Juice",
-  //     qty: "bottle of 1 Ltr Juice",
-  //     strikePrice: "265",
-  //     discount: "35% off",
-  //     price: "172",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-vita-ex-gold-capsule-for-vitality-stamina-otc323951",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/ogypzm1jrh5y0gislnwm.jpg",
-  //     name: "Baidyanath Vita-Ex Gold Capsule for Vitality & Stamina",
-  //     qty: "bottle of 20 capsules",
-  //     strikePrice: "475",
-  //     discount: "15% off",
-  //     price: "404",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-vansaar-shilajit-resin-otc671424",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/ttujayukq6mdk95t1aob.jpg",
-  //     name: "Baidyanath Vansaar Shilajit Resin",
-  //     qty: "bottle of 15 gm Pack",
-  //     strikePrice: "1499",
-  //     discount: "15% off",
-  //     price: "1274",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-chitrakadi-bati-tablet-otc327001",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/zrphzczzrwe4o6hnqmqc.png",
-  //     name: "Baidyanath Chitrakadi Bati Tablet",
-  //     qty: "bottle of 80 tablets",
-  //     strikePrice: "94",
-  //     discount: "14% off",
-  //     price: "81",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-vansaar-isabgol-psyllium-husk-powder-otc497819",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/dxxwizplopbwahvbcbb2.jpg",
-  //     name: "Baidyanath Vansaar Isabgol Psyllium Husk Powder",
-  //     qty: "box of 100 gm Powder",
-  //     strikePrice: "120",
-  //     discount: "15% off",
-  //     price: "102",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-vansaar-triphala-juice-natural-herbal-laxative-otc349184",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/foeocdhjfl51ub5wafmg.jpg",
-  //     name: "Baidyanath Vansaar Triphala Juice Natural Herbal Laxative",
-  //     qty: "bottle of 1 Ltr Juice",
-  //     strikePrice: "265",
-  //     discount: "13% off",
-  //     price: "230",
-  //   },
-  // ];
+  
 
    const FeaturedBrands = [
     {
@@ -610,77 +585,4 @@ const HomeProductBox = () => {
   ];
  
 
-  // const himalayaProducts = [
-  //   {
-  //     link: "https://www.1mg.com/otc/himalaya-herbals-purifying-neem-face-wash-otc370058",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/nhu0rbh3wtdlr7pdhoq4.jpg",
-  //     name: "Himalaya Herbals Purifying Neem Face Wash",
-  //     qty: "pump bottle of 200ml",
-  //     strikePrice: "250",
-  //     discount: "12% off",
-  //     price: "₹220",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/himalaya-cocoa-butter-intensive-body-lotion-otc326393",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/smpufwdh6hnpb8bzca01.jpg",
-  //     name: "Himalaya Cocoa Butter Intensive Body Lotion",
-  //     qty: "pump bottle of  400ml lotion",
-  //     strikePrice: "300",
-  //     discount: "18% off",
-  //     price: "246",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/himalaya-herbals-purifying-neem-face-wash-otc546187",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/eywlzc1uguxsy3c6cxpo.jpg",
-  //     name: "Himalaya Herbals Purifying Neem Face Wash",
-  //     qty: "pump bottle of 400ml lotion ",
-  //     strikePrice: "425",
-  //     discount: "18% off",
-  //     price: "340",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/himalaya-herbals-purifying-neem-face-wash-otc325809",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/cnndmskfmcldpwhljwcp.jpg",
-  //     name: "Himalaya facewash",
-  //     qty: "tube of 100ml",
-  //     strikePrice: "140",
-  //     discount: "14% off",
-  //     price: "120",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-chyawanprash-special-immunity-booster-for-omniprotection-with-madhu-free-50gm-otc698062",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/8b05e7d4-9f78-480a-bff8-bc8267f8a56e.jpeg",
-  //     name: "Himalaya neem and turmeric soap",
-  //     qty: "packet of 125gm soap",
-  //     strikePrice: "58",
-  //     discount: "12% off",
-  //     price: "51",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-vita-ex-massage-oil-otc349340",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/xsjfwil6pl5zuyrxaxkc.png",
-  //     name: "Himalaya Anti dandruff Shampoo",
-  //     qty: "bottle of 150 ml ",
-  //     strikePrice: "250",
-  //     discount: "15% off",
-  //     price: "225",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/baidyanath-kesari-kalp-royal-chyawanprash-promotes-vitality-strength-stamina-otc388303",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/mxage34bx5xfak0gkoia.jpg",
-  //     name: "Himalaya Men Facewash",
-  //     qty: "tube of 100gm ",
-  //     strikePrice: "180",
-  //     discount: "14% off",
-  //     price: "150",
-  //   },
-  //   {
-  //     link: "https://www.1mg.com/otc/himalaya-personal-care-pure-hands-hand-wash-tulsi-lemon-deep-cleansing-otc580878",
-  //     img: "https://onemg.gumlet.io/a_ignore,w_380,h_380,c_fit,q_auto,f_auto/cropped/k2snx8bn1a5rphbbflrw.png",
-  //     name: "Himalaya Handwash",
-  //     qty: "pump of 200ml",
-  //     strikePrice: "150",
-  //     discount: "15% off",
-  //     price: "135",
-  //   },
-  // ];
+  

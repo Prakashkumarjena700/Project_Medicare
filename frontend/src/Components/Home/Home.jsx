@@ -58,7 +58,7 @@ export default function Home() {
 
     {/*  Carousel and image  */}
 
-    <Box textAlign={"center"} p="2rem" border="1px solid lightgrey">
+    <Box textAlign={"center"} p="2rem" border="1px solid lightgrey" mb={"2rem"}>
       <Text
         fontWeight={"400"}
         fontSize={"25px"}
@@ -69,9 +69,10 @@ export default function Home() {
       </Text>
     
 
-    <HomeProductBox />
+      <HomeProductBox />
     </Box>
-    <UpperFooter />
+      <UpperFooter />
+    
   </Box>
   )
 }

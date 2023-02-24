@@ -2,6 +2,7 @@ import { Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
+import { StarIcon } from '@chakra-ui/icons'
 const ProductsCard = ({ something, prodVal = 6 }) => {
   const responsive = {
     desktop: {
@@ -28,7 +29,7 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
 
   return (
     <Box backgroundColor="#ffffff">
-    <Box bg="white" p="1rem" w="80%" m="auto" h="300px">
+    <Box bg="white" p="1rem" w="80%" m="auto" h="390px">
       <Carousel
         swipeable={true}
         draggable={true}
@@ -57,22 +58,39 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
             }}
             cursor="pointer"
             onClick={()=>handleClick(e._id)}
-          >
-            <Image h={"50%"} w={"50%"} m="auto" src={e.img1} />
-            <Box>
-              <Text fontSize={"15px"}>{e.name}</Text>
-              <Text fontSize={"13px"}>{e.form}</Text>
-              <Text>
-                {/* MRP{" "}
-                <span style={{ textDecoration: "line-through" }}>
-                  ₹{e.price}
-                </span> */}
+          > 
+            <Box h={"175px"}>
+              <Image h={"100%"} w={"80%"} m="auto" src={e.img1} />
+            </Box>
+            <Box h={"120px"} >
+              <Text fontSize={"16px"}>{e.name}</Text>
+              <Text fontSize={"16px"}>{e.form}</Text>
+              
+              </Box>
+              <Box>
+
+              {/* <Image h={"20%"} w={"20%"} m="auto" src={"https://img.freepik.com/free-vector/start_53876-25533.jpg?size=338&ext=jpg"} />
+              {/* <Text>
                 <span style={{ color: "green", marginLeft: "1rem" }}>
                   {e.rating}
                 </span>
-              </Text>
-              <Text fontWeight={"600"}>₹ {e.price}</Text>
-            </Box>
+              </Text> */} 
+              <Box display='flex' mt='2' alignItems='center'>
+                  {Array(5)
+                    .fill('')
+                    .map((_, i) => (
+                      <StarIcon
+                        key={i}
+                        color={i < e.rating ? '#388E3C' : 'gray.300'}
+                      />
+                    ))}
+          <Box as='span' ml='2' color='gray.600' fontSize='sm'>
+            {e.rating} reviews
+          </Box>
+        </Box>
+             
+               <Text fontWeight={"600"}>MRP ₹ {e.price}</Text>
+              </Box>
           </Box>
         ))}
       </Carousel>
