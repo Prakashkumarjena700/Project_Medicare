@@ -55,7 +55,7 @@ const BrandsCard = ({ something }) => {
             cursor="pointer"
             
           >
-            <Image w={"70%"} m="auto" src={e.img} />
+            <Image w={"90%"} m="auto" src={e.img} />
             <Text>{e.title}</Text>
           </Box>
         ))}
