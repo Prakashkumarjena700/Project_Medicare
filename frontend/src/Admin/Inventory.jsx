@@ -1,8 +1,9 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import {
   Table,
   Thead,
   Tbody,
+  Tfoot,
   Tr,
   Th,
   Td,
@@ -11,115 +12,85 @@ import {
   Box
 } from '@chakra-ui/react'
 import './styles/Inventory.css'
+
+
+
+import axios from 'axios'
+
+
+
+
+
 const Inventory = () => {
 
-
- 
-
-  // useEffect(()=>{
+       
+const [data,setData]= useState([])
+const [skip, setSkip]=useState(0)
+useEffect(() =>{
+  async function fetchData(){
+     let res= await axios.get(`https://glamorous-jumpsuit.cyclic.app/data?limit=5&skip=${skip}`)
+     console.log(res.data.length)
+     setData(res.data)
+    }
+    fetchData()
+},[skip])
+       
     
-  //   fetch("https://glamorous-jumpsuit.cyclic.app/data",{
-  //     headers:{
-  //         "Authorization":localStorage.getItem("token")
-  //     },
-     
-  // })
-  // },[])
+
+
   return (
     <>
-     <TableContainer  className='one'>
-    <Table  colorScheme='white'>
-     
+         
+        
+              
+              <TableContainer   className='one'>
+    <Table >
+   
       <Thead  className='head'>
         <Tr className='two' >
-        <Th className='three' >Image</Th>
+          <Th className='three' >Image</Th>
           <Th className='three' >Name</Th>
-          <Th  className='three' >Product Id</Th>
+          <Th className='three' >Product Id</Th>
           <Th className='three' >Price</Th>
-          <Th className='three' >Delete</Th>
+          <Th className='three' >Brand</Th>
           <Th className='three' >Edit</Th>
 
         </Tr>
       </Thead>
-      <Tbody>
-        <Tr className='two'>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-        </Tr>
-        <Tr className='two' >
-          <Td>feet</Td>
-          <Td>centimetres (cm)</Td>
-          <Td >30.48</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-        </Tr>
-        <Tr className='two' >
-          <Td>yards</Td>
-          <Td>metres (m)</Td>
-          <Td >0.91444</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-        </Tr>
 
-        <Tr className='two' >
-          <Td>yards</Td>
-          <Td>metres (m)</Td>
-          <Td >0.91444</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-        </Tr>
+      {data.map((ele)=>{
+     return(
 
-        <Tr  className='two' >
-          <Td>yards</Td>
-          <Td>metres (m)</Td>
-          <Td >0.91444</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-        </Tr>
+     <Tbody>
+  <Tr className='two'>
+    <Td>  <img src= {ele.img1} /> </Td>
+ 
+    <Td  >{ele.name.substring(0, 35)}</Td>
+    <Td >{ele._id}</Td>
+    <Td>₹ {ele.price}</Td>
+    <Td>{ele.brand}</Td>
+    <Td >edit</Td>
+  </Tr>
+</Tbody>
+ )
 
-        <Tr className='two' >
-          <Td>yards</Td>
-          <Td>metres (m)</Td>
-          <Td >0.91444</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-        </Tr>
+      })}
+        
+       
 
-        <Tr className='two' >
-          <Td>yards</Td>
-          <Td>metres (m)</Td>
-          <Td >0.91444</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-        </Tr>
-      </Tbody>
-     
+       
+ 
+
     </Table>
   </TableContainer>
-    
-    <Box ml={"35%"} display={"flex"} gap={"10px"}  mt={"20px"}>
-    <Button  border={"1px solid black"}>Previous</Button>
-  <Button border={"1px solid black"}>1</Button>
-  <Button border={"1px solid black"}>2</Button>
-  <Button border={"1px solid black"}>3</Button>
-  <Button border={"1px solid black"}>4</Button>
-  <Button border={"1px solid black"}>Next</Button>
-    </Box> 
-    <h1>all data</h1>
+  
+  <Button onClick={()=>setSkip(skip-5)}>previous</Button>
+           
+  <Button onClick={()=>setSkip(skip+5)}>next</Button>
+ 
+  {/* <Pagination current={page} total={data.totalPages} onChange={(value)=>setPage(value)}/> */}
   </>
   )
 }
-
-
 
 export default Inventory

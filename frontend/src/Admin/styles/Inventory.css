@@ -1,23 +1,29 @@
 .one{
-    width:75%;
-    margin-left: 10%;
+    width:100%;
+    
     /* background-color: rgb(43, 42, 42); */
 }
-
 .two{
-    color: black;
-    background-color: gray;
+    margin-top: 5px;
+    border-top: 3px solid white;
+}
+
+.two img{
+    width:50px;
 }
 .head{
-    background-color: rgb(15, 15, 15);
+    /* background-color: rgb(155, 149, 149); */
+    border: 2px solid white;
+    margin-bottom: 20px;
+   border-bottom: 2px solid white;
    
 }
 
 
-.three{
-    color:#fe0039;
-     background-color: rgb(15, 15, 15);
-}
+
+
+
+
 
 .ip{
     border: 1px solid blue;
@@ -36,4 +42,9 @@
     border: 1px solid red;
     width:40%;
     margin-left: 35%;
+}
+
+
+#size{
+    width: 100px;
 }

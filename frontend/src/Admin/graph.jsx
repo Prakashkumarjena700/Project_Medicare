@@ -53,7 +53,9 @@ const Graph = () => {
 
 
     // </>
-    <Box id="boxes"></Box>
+    <Box id="boxes">
+      
+    </Box>
   );
 };
 
