@@ -1,7 +1,7 @@
 @media all and (min-width: 1024px) {
 
 .main{
-  margin-left: 15%;
+  margin-left:11%;
        border: 0px solid red;
        width:60%;
        height: 200px;
@@ -59,7 +59,7 @@
 }
 
 
- @media all and (min-width: 480px) and (max-width: 749px) { 
+ @media all and (min-width: 480px) and (max-width: 900px) { 
   .main{
         margin-left: 20%;
         margin-top: 40px;
