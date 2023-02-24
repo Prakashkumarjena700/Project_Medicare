@@ -34,7 +34,7 @@ import {
                 <option value="Andhra Pradesh">Andhra Pradesh</option>
               </Select>
             </InputGroup>
-            <InputGroup size={"sm"} width={{ base: "90%", md: "50%" }}>
+            <InputGroup size={"sm"} width={{ base: "90%", md: "50%",lg:"90%" }}>
               <Input
                 placeholder="Search for Medical and Health Products"
                 bg={"#f1f4f6"}

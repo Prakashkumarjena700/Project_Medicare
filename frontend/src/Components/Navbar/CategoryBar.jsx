@@ -3,7 +3,6 @@ import {
     Flex,
     Text,
     IconButton,
-    Button,
     Stack,
     Collapse,
     Icon,
@@ -13,7 +12,6 @@ import {
     PopoverContent,
     useColorModeValue,
     useDisclosure,
-    Image
   } from '@chakra-ui/react';
   import {
     HamburgerIcon,
@@ -21,58 +19,15 @@ import {
     ChevronDownIcon,
     ChevronRightIcon,
   } from '@chakra-ui/icons';
-  import { FaShoppingCart } from "react-icons/fa";
-  import { NavLink } from "react-router-dom";
-  import Logo from "../Logo/logo-color.png"
-  import SearchBar from './SearchBar';
-
-  const NAV_ITEMS = [
-    {
-      label: "MEDICINE",
-      href: "/medicine",
-    },
-    {
-      label: "LEB TESTS",
-      href: "",
-    },
-    {
-      label: "ALL PRODUCTS",
-      href: "",
-    },
-    {
-      label: "COVID-19",
-      href: "",
-    },
-    {
-      label: "AYURVEDA",
-      href: "",
-    },
-    {
-      label: "CARE PLAN",
-      href: "",
-    },
-  ];
-
-
-  const AUTH_ITEMS = [
-    {
-      label: "Login",
-      href: "/login",
-    },
-    {
-      label: "Signup",
-      href: "/signup",
-    },
-  ];
   
-  export default function Navbar() {
+  export default function CategoryBar() {
     const { isOpen, onToggle } = useDisclosure();
   
     return (
       <Box>
         <Flex
-          bg={useColorModeValue("white", "gray.800")}
-          color={useColorModeValue("gray.600", "white")}
+          bg={useColorModeValue('white', 'gray.800')}
+          color={useColorModeValue('gray.600', 'white')}
           minH={'60px'}
           py={{ base: 2 }}
           px={{ base: 4 }}
@@ -93,106 +48,41 @@ import {
               aria-label={'Toggle Navigation'}
             />
           </Flex>
-          <Flex flex={{ base: 1 }} justify={{ base:'center', md: 'start' }}>
-            <Image  height={10} width={20} src={Logo}>
-             
-            </Image>
+          <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start', lg:"none"}}>
   
-            <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
+            <Flex display={{ base: 'none', md: 'flex' }} ml={20}>
               <DesktopNav />
             </Flex>
           </Flex>
-  
-          <Stack
-            flex={{ base: 1, md: 0 }}
-            justify={"flex-end"}
-            direction={"row"}
-            spacing={2}
-            display={{ base: "none", md: "none", lg: "flex" }}
-          >
-            <NavLink to="/login">
-              <Button
-                as={"a"}
-                fontSize={"sm"}
-                fontWeight={400}
-                variant={"link"}
-                borderRight={"1px solid"}
-                borderRadius="none"
-                pr={"10px"}
-              >
-                Login
-              </Button>
-            </NavLink>
-
-            <NavLink to="/signup">
-              <Button
-                as={"a"}
-                fontSize={"sm"}
-                fontWeight={400}
-                variant={"link"}
-              >
-                Sign Up
-              </Button>
-            </NavLink>
-          </Stack>
-
-          <Flex justify="space-around" m={"0 20px"} gap={"20px"} align="center">
-          <Text
-            as="p"
-            cursor={"pointer"}
-            display={{ base: "none", md: "none", lg: "flex" }}
-          >
-            Offer
-          </Text>
-          <NavLink to="/cart">
-            <FaShoppingCart
-              color={"#000"}
-              fontSize={"20px"}
-              cursor="pointer"
-            />
-          </NavLink>
-          <Text
-            as="p"
-            cursor="pointer"
-            display={{ base: "none", md: "none", lg: "flex" }}
-            fontSize={"14px"}
-          >
-            Need Help?
-          </Text>
-        </Flex>
         </Flex>
   
         <Collapse in={isOpen} animateOpacity>
           <MobileNav />
         </Collapse>
-
-         {/* HERE SEARCH BAR  */}
-         
-        <SearchBar/>
       </Box>
-     
-      
     );
   }
   
   const DesktopNav = () => {
+    const linkColor = useColorModeValue('gray.600', 'gray.200');
+    const linkHoverColor = useColorModeValue("tomato", 'white');
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
     return (
-      <Stack direction={'row'} spacing={4}>
-        {NAV_ITEMS.map((navItem) => (
+      <Stack direction={'row'} spacing={2}>
+        {CAT_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
               <PopoverTrigger>
                 <Link
                   p={2}
                   href={navItem.href ?? '#'}
-                  fontSize={'md'}
-                  fontWeight={600}
-                  color={"black"}
+                  fontSize={'sm'}
+                  fontWeight={500}
+                  color={linkColor}
                   _hover={{
                     textDecoration: 'none',
-                    color: "tomato",
+                    color: linkHoverColor,
                   }}>
                   {navItem.label}
                 </Link>
@@ -228,12 +118,13 @@ import {
         display={'block'}
         p={2}
         rounded={'md'}
-        _hover={{ bg: useColorModeValue('tomato.50', 'gray.900') }}>
+        _hover={{ color:"tomato" }}>
+            {/* //bg: useColorModeValue('tomato', 'gray.900') */}
         <Stack direction={'row'} align={'center'}>
           <Box>
             <Text
               transition={'all .3s ease'}
-              _groupHover={{ color: 'pink.400' }}
+              _groupHover={{ color: 'tomato' }}
               fontWeight={500}>
               {label}
             </Text>
@@ -258,15 +149,10 @@ import {
     return (
       <Stack
         bg={useColorModeValue('white', 'gray.800')}
+        
         p={4}
-        display={{ md: 'none' }} 
-       
-        >
-        {NAV_ITEMS.map((navItem) => (
-          <MobileNavItem key={navItem.label} {...navItem} />
-        ))}
-
-        { AUTH_ITEMS.map((navItem) => (
+        display={{ md: 'none' }}>
+        {CAT_ITEMS.map((navItem) => (
           <MobileNavItem key={navItem.label} {...navItem} />
         ))}
       </Stack>
@@ -290,8 +176,10 @@ import {
           }}>
           <Text
             fontWeight={600}
-            color={useColorModeValue('gray.600', 'gray.200')}>
+            color={useColorModeValue('gray.600', 'gray.200')}
+            >
             {label}
+        
           </Text>
           {children && (
             <Icon
@@ -314,7 +202,7 @@ import {
             align={'start'}>
             {children &&
               children.map((child) => (
-                <Link key={child.label} py={2} href={child.href} >
+                <Link key={child.label} py={2} href={child.href}>
                   {child.label}
                 </Link>
               ))}
@@ -323,3 +211,100 @@ import {
       </Stack>
     );
   };
+  
+ 
+  
+  const CAT_ITEMS = [
+    {
+      label: "Health Resources Center",
+      children: [
+        {
+          label: "All disease",
+          href: "",
+        },
+        {
+          label: "All Medicines",
+          href: "",
+        },
+        {
+          label: "Medicines by Therapeutic Class",
+          href: "",
+        },
+      ],
+    },
+    {
+      label: "Vitamin & Nutrition",
+      children: [
+        {
+          label: "Vitamins & Supplements",
+          href: "",
+        },
+        {
+          label: "Nutritional Drinks",
+          href: "",
+        },
+        {
+          label: "Health Snacks & Drinks",
+          href: "",
+        },
+        {
+            label: "Protein & Supplements",
+            href: "",
+          },
+      ],
+    },
+    {
+      label: "Diabetes",
+      children: [
+       
+      ],
+    },
+    {
+         label:"HealthCare Devices",
+      children: [
+       
+      ],
+    },
+    {
+    
+    label: "Personal Care",
+      children: [
+      
+      ],
+    },
+    {
+    
+     label: "Health Conditions",
+      children: [
+       
+      ],
+    },
+    {
+   
+      label: "Ayurveda Products",
+      children: [
+       
+      ],
+    },
+  
+    {
+    
+       label: "Homeopathy",
+      children: [
+        
+      ],
+    },
+    {
+      label: "Featured",
+      children: [
+        
+      ],
+    },
+
+    {
+        label: "Covid Essentials",
+        children: [
+          
+        ],
+      },
+  ];
