@@ -3,7 +3,7 @@ import React from "react";
 import "./Products.css";
 import { ImStarEmpty } from "react-icons/im";
 import { FaCartPlus } from "react-icons/fa";
-import { useNavigate } from "react-router";
+import { useNavigate, useParams } from "react-router";
 
 export const ProductsCart = ({ product }) => {
   const navigate = useNavigate();
@@ -16,13 +16,17 @@ export const ProductsCart = ({ product }) => {
     }
   };
 
-  //   navigate(`/products/${id}`);
+  const handleDetails = (id) => {
+    navigate(`/product/${id}`);
+    // console.log(id, "id");
+  };
 
   return (
-    <div className="productCart_container">
+    <div className="productCart_container" style={{ backgroundColor: "white" }}>
       <div
         className="product_image"
-        //    onClick={() => handleDetails(product._id)}
+        style={{ backgroundColor: "white" }}
+        onClick={() => handleDetails(product._id)}
       >
         <img src={product.img1} alt="product" />
       </div>
