@@ -4,6 +4,9 @@ import { ProductsCart } from "./ProductsCart";
 import { Flex, SimpleGrid } from "@chakra-ui/react";
 import axios from "axios";
 import "./Sidebar.css";
+import Footer from "../Footer/Footer";
+import Navbar from "../Navbar/Navbar";
+import CategoryBar from "../Navbar/CategoryBar";
 
 export const Products = () => {
   const [data, setData] = useState([]);
@@ -16,7 +19,7 @@ export const Products = () => {
 
 
   const handleOnChange = (e) => {
-    
+
     console.log(e.target.value, "val");
     console.log(e.target.checked, "checked");
     console.log(e, "e");
@@ -32,6 +35,8 @@ export const Products = () => {
 
   return (
     <>
+      <Navbar />
+      <CategoryBar />
       <div className="main_container">
         <div className="sidebar">
           <div className="sidebar_container">
@@ -230,6 +235,7 @@ export const Products = () => {
           </SimpleGrid>
         </div>
       </div>
+      <Footer />
     </>
   );
 };

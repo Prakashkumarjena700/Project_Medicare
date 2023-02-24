@@ -6,6 +6,7 @@ import UpperFooter from "./UpperFooter"
 import HomeProductBox from './HomeProductBox';
 import Navbar from '../Navbar/Navbar';
 import CategoryBar from '../Navbar/CategoryBar';
+import Footer from '../Footer/Footer';
 
 
 export default function Home() {
@@ -32,7 +33,6 @@ export default function Home() {
     <>
       <Navbar />
       <CategoryBar />
-
       <Box fontFamily="Clear Sans">
         {/*  carousel and image */}
         <Box display={"flex"} border="1px solid lightgrey" p="0.5">
@@ -80,6 +80,7 @@ export default function Home() {
         <UpperFooter />
 
       </Box>
+      <Footer/>
     </>
   )
 }
