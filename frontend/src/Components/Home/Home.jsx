@@ -4,11 +4,13 @@ import AliceCarousel from "react-alice-carousel";
 import "react-alice-carousel/lib/alice-carousel.css";
 import UpperFooter from "./UpperFooter"
 import HomeProductBox from './HomeProductBox';
+import Navbar from '../Navbar/Navbar';
+import CategoryBar from '../Navbar/CategoryBar';
 
 
 export default function Home() {
 
-   const SlidingImage = [
+  const SlidingImage = [
     {
       img: "https://onemg.gumlet.io/ca196b25-d504-4dd7-bb47-115b9e547824_1667387832.jpg?w=1013&h=250&format=auto",
     },
@@ -27,52 +29,57 @@ export default function Home() {
   ];
 
   return (
-    <Box fontFamily="Clear Sans">
-    {/*  carousel and image */}
-    <Box display={"flex"} border="1px solid lightgrey" p="0.5">
-      <Box w={"70%"}>
-        <AliceCarousel
-          autoPlay
-          autoPlayInterval="1000"
-          disableButtonsControls="true"
-          disableDotsControls="true"
-          infinite="true"
-        >
-          {SlidingImage.map((e, i) => (
-            <Image w="100%" key={i} src={e.img} />
-          ))}
-        </AliceCarousel>
+    <>
+      <Navbar />
+      <CategoryBar />
+
+      <Box fontFamily="Clear Sans">
+        {/*  carousel and image */}
+        <Box display={"flex"} border="1px solid lightgrey" p="0.5">
+          <Box w={"70%"}>
+            <AliceCarousel
+              autoPlay
+              autoPlayInterval="1000"
+              disableButtonsControls="true"
+              disableDotsControls="true"
+              infinite="true"
+            >
+              {SlidingImage.map((e, i) => (
+                <Image w="100%" key={i} src={e.img} />
+              ))}
+            </AliceCarousel>
+          </Box>
+          <Box w="30%">
+            <Link
+              target="_blank"
+              href="https://www.1mg.com/labs/test/advanced-cardiac-risk-markers-34953"
+            >
+              <Image
+                h="100%"
+                src="https://onemg.gumlet.io/a_ignore,w_480,h_200,c_fit,q_auto,f_auto/1caa64c3-60f0-4c9d-ab85-4fc9a49769c3.png"
+              />
+            </Link>
+          </Box>
+        </Box>
+
+        {/*  Carousel and image  */}
+
+        <Box textAlign={"center"} p="2rem" border="1px solid lightgrey" mb={"2rem"}>
+          <Text
+            fontWeight={"400"}
+            fontSize={"25px"}
+            lineHeight={"31px"}
+            color={"#666666"}
+          >
+            Tata 1mg: India’s Leading Online Pharmacy & Healthcare Platform
+          </Text>
+
+
+          <HomeProductBox />
+        </Box>
+        <UpperFooter />
+
       </Box>
-      <Box w="30%">
-        <Link
-          target="_blank"
-          href="https://www.1mg.com/labs/test/advanced-cardiac-risk-markers-34953"
-        >
-          <Image
-            h="100%"
-            src="https://onemg.gumlet.io/a_ignore,w_480,h_200,c_fit,q_auto,f_auto/1caa64c3-60f0-4c9d-ab85-4fc9a49769c3.png"
-          />
-        </Link>
-      </Box>
-    </Box>
-
-    {/*  Carousel and image  */}
-
-    <Box textAlign={"center"} p="2rem" border="1px solid lightgrey" mb={"2rem"}>
-      <Text
-        fontWeight={"400"}
-        fontSize={"25px"}
-        lineHeight={"31px"}
-        color={"#666666"}
-      >
-        Tata 1mg: India’s Leading Online Pharmacy & Healthcare Platform
-      </Text>
-    
-
-      <HomeProductBox />
-    </Box>
-      <UpperFooter />
-    
-  </Box>
+    </>
   )
 }
