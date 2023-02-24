@@ -7,7 +7,9 @@ import ProductDetails from "../Components/ProductsDetailsPage/ProductsDetails";
 
 import Admin from "../Admin/Admin"
 import AdminSignin from '../Admin/AdminSignin'
+
 import Inventory from '../Admin/Inventory'
+
 
 export default function AllRoutes() {
 
@@ -16,6 +18,7 @@ export default function AllRoutes() {
             <Route path='/' element={<Home />} ></Route> 
             <Route path='/admin' element={<Admin />} ></Route>
             <Route path='/adminsignin' element={<AdminSignin />} ></Route>
+            
 
             <Route path='/inventory' element={<Inventory />} ></Route>
 
