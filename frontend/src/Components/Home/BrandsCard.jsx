@@ -24,7 +24,8 @@ const BrandsCard = ({ something }) => {
     },
   };
   return (
-    <Box p="2" h="fitContent" mt="10px" mb={"10px"} bg="white">
+    <Box backgroundColor="#ffffff">
+    <Box p="2" h="fitContent" mt="10px" mb={"10px"} bg="white" w="80%" m="auto">
       <Carousel
         swipeable={true}
         draggable={true}
@@ -52,12 +53,14 @@ const BrandsCard = ({ something }) => {
                 "rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px",
             }}
             cursor="pointer"
+            
           >
-            <Image w={"70%"} m="auto" src={e.img} />
+            <Image w={"90%"} m="auto" src={e.img} />
             <Text>{e.title}</Text>
           </Box>
         ))}
       </Carousel>
+    </Box>
     </Box>
   );
 };

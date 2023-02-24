@@ -58,7 +58,7 @@ export default function Home() {
 
     {/*  Carousel and image  */}
 
-    <Box textAlign={"center"} p="2rem" border="1px solid lightgrey">
+    <Box textAlign={"center"} p="2rem" border="1px solid lightgrey" mb={"2rem"}>
       <Text
         fontWeight={"400"}
         fontSize={"25px"}
@@ -67,10 +67,12 @@ export default function Home() {
       >
         Tata 1mg: India’s Leading Online Pharmacy & Healthcare Platform
       </Text>
-    </Box>
+    
 
-    <HomeProductBox />
-    <UpperFooter />
+      <HomeProductBox />
+    </Box>
+      <UpperFooter />
+    
   </Box>
   )
 }

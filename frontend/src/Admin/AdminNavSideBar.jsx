@@ -1,6 +1,9 @@
 import React  from 'react';
 import './styles/AdminNavSideBar.css'
 import Dashboard from './Dashboard';
+import Inventory from './Inventory';
+import Customers from './customers';
+import AddProduct from './AddProduct';
 import {
   IconButton,
   Avatar,
@@ -37,10 +40,10 @@ import {FiChevronDown} from 'react-icons/fi'
 
 
 
+
 const LinkItems= [
   { name: 'DashBoard', icon: RxDashboard},
   { name: 'Inventory', icon: MdInventory },
-  { name: 'Orders', icon: RiShoppingCartFill },
   { name: 'Customers', icon: FaUserFriends },
   { name: 'Add Products', icon: MdAddBox},
 ];
@@ -50,7 +53,7 @@ export default function AdminNavSideBar() {
     const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     
-    <Box minH="100vh" bg={useColorModeValue('gray.100', 'gray.900')} >
+    <Box minH="100vh" maxW={"100%"} bg={useColorModeValue('gray.100', 'gray.900')} >
 {/* <Box>hello</Box> */}
       <SidebarContent
       top={0}
@@ -71,10 +74,13 @@ export default function AdminNavSideBar() {
       </Drawer>
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
-      <Box ml={{ base: 0, md: 60 }} p="4">
-       
+      <Box ml={{ base: 0, md: 60 }} p="4" >
+      <Dashboard />
+     <Inventory />
+       <Customers />
+    <AddProduct /> 
       </Box>
-     <Dashboard />
+     
     </Box>
   );
 }
@@ -116,6 +122,7 @@ const NavItem = ({ icon, children, ...rest }) => {
         align="center"
         p="4"
         mx="4"
+        mt={"20px"}
       //  border={"1px solid red"}
         borderRadius="lg"
         role="group"
