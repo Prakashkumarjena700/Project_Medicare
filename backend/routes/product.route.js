@@ -37,17 +37,10 @@ productRoute.post("/create", async (req, res) => {
 productRoute.patch("/update/:id", async (req, res) => {
     const payload = req.body
     const id = req.params.id
-    const note = await productModel.findOne({ "_id": id })
-    const user_id_in_note = note.user
-    const user_id_making_req = req.body.user
 
     try {
-        if (user_id_making_req !== user_id_in_note) {
-            res.send({ "mag": "Your not autherrished" })
-        } else {
-            await productModel.findByIdAndUpdate({ "_id": id }, payload)
-            res.send({ "msg": "Product has been updated" })
-        }
+        await productModel.findByIdAndUpdate({ "_id": id }, payload)
+        res.send({ "msg": "Product has been updated" })
     } catch (err) {
         res.send({ "msg": "Product not updated" })
     }
@@ -55,17 +48,10 @@ productRoute.patch("/update/:id", async (req, res) => {
 
 productRoute.delete("/delete/:id", async (req, res) => {
     const id = req.params.id
-    const note = await productModel.findOne({ "_id": id })
-    const user_id_in_note = note.user
-    const user_id_making_req = req.body.user
 
     try {
-        if (user_id_making_req !== user_id_in_note) {
-            res.send({ "mag": "Your not autherrished" })
-        } else {
-            await productModel.findByIdAndDelete({ "_id": id })
-            res.send({ "msg": "Product has been Deleted" })
-        }
+        await productModel.findByIdAndDelete({ "_id": id })
+        res.send({ "msg": "Product has been Deleted" })
     } catch (err) {
         res.send({ "msg": "Product not Deleted" })
     }
