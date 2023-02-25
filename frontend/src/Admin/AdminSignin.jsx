@@ -21,9 +21,26 @@ const initState = {
 }
 export default function AdminSignin() {
 
-  const [form, setForm] = useState(initState);
 
+  const [form, setForm] = useState(initState);
   const {email, password} =form
+  // const hanndleSubmit=()=>{
+  // const {email, password} =form
+  // const payload={
+  //   email,
+  //   password
+  // }
+
+  // // fetch("https://glamorous-jumpsuit.cyclic.app/admin/login",{
+  // //   method:"POST",
+  // //   headers:{
+  // //     "Content-type":"application/json"
+  // //   },
+  // //   body:JSON.stringify(payload)
+  // // })
+    
+//   console.log(payload)
+// }
   
   const navigate = useNavigate()
 
@@ -32,12 +49,16 @@ export default function AdminSignin() {
       let {data} =  await axios.post("https://glamorous-jumpsuit.cyclic.app/admin/login",form)
      
       localStorage.setItem("admindata",JSON.stringify(data))
-      console.log(data)
+      localStorage.setItem("token",data.token)
+
 
      if( data.token){
 
       navigate('/admin')
 
+     }
+     else{
+      alert("❌Access Denied ❌")
      }
 
     }
