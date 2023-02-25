@@ -25,7 +25,7 @@ const BrandsCard = ({ something }) => {
   };
   return (
     <Box backgroundColor="#ffffff">
-    <Box p="2" h="fitContent" mt="10px" mb={"10px"} bg="white" w="80%" m="auto">
+    <Box p="2" h="fitContent" mt="10px" mb={"10px"} bg="white" w="100%" m="auto">
       <Carousel
         swipeable={true}
         draggable={true}
