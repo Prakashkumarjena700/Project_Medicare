@@ -9,6 +9,7 @@ import Admin from "../Admin/Admin"
 import AdminSignin from '../Admin/AdminSignin'
 
 import Inventory from '../Admin/Inventory'
+import LabTests from "../Components/LabTests/LabTests";
 
 
 export default function AllRoutes() {
@@ -21,7 +22,7 @@ export default function AllRoutes() {
             <Route path='/inventory' element={<Inventory />} ></Route>
             <Route path="/product" element={<Products />}></Route>
             <Route path="/product/:id" element={<ProductDetails />}></Route>
-
+            <Route path="/labtests" element={<LabTests/>} ></Route>
         </Routes>
     )
 }
