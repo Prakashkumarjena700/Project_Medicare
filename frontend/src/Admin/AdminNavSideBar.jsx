@@ -4,7 +4,7 @@ import Dashboard from "./Dashboard";
 import Inventory from "./Inventory";
 import Customers from "./customers";
 import AddProduct from "./AddProduct";
-
+import {useNavigate} from "react-router-dom"
 import {
   IconButton,
   Avatar,
@@ -48,13 +48,15 @@ const LinkItems = [
 export default function AdminNavSideBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
+
+
   return (
     <Box
       minH="100vh"
       maxW={"100%"}
       bg={useColorModeValue("gray.100", "gray.900")}
     >
-      {/* <Box>hello</Box> */}
+     
       <SidebarContent
         top={0}
         onClose={() => onClose}
@@ -77,7 +79,7 @@ export default function AdminNavSideBar() {
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
         {/* <Dashboard/>  */}
-        <Inventory />
+         <Inventory />
         {/* <Customers /> */}
         {/* <AddProduct />    */}
       </Box>
@@ -127,9 +129,11 @@ const NavItem = ({ icon, children, ...rest }) => {
         borderRadius="lg"
         role="group"
         cursor="pointer"
+        backgroundColor="#fe2f5e"
         _groupHover={{
-          color: "black",
+          color: "white",
           border: "0px solid red",
+       
         }}
         {...rest}
       >
@@ -138,7 +142,7 @@ const NavItem = ({ icon, children, ...rest }) => {
             mr="4"
             fontSize="16"
             _groupHover={{
-              color: "white",
+              color: "black",
             }}
             as={icon}
           />
@@ -154,6 +158,11 @@ const MobileNav = ({ onOpen, ...rest }) => {
 
   let datas =JSON.parse(localStorage.getItem("admindata"))
   console.log("datas",datas);
+
+  const navigate = useNavigate()
+  function tosignin(){
+    navigate('/adminsignin')
+  }
 
   const { colorMode, toggleColorMode } = useColorMode();
   return (
@@ -238,7 +247,10 @@ const MobileNav = ({ onOpen, ...rest }) => {
               <MenuItem> Ph.No: {datas.phoneNumber}</MenuItem>
               <MenuItem> Gender: {datas.gender}</MenuItem>
               
-              <MenuItem backgroundColor={"#fe0039"} color={"white"}>
+              <MenuItem backgroundColor={"#fe0039"} color={"white"}
+               onClick={()=>tosignin()}
+              >
+
                 Logout
               </MenuItem>
             </MenuList>

@@ -6,6 +6,7 @@
 .two{
     margin-top: 5px;
     border-top: 3px solid white;
+    text-align: center;
 }
 
 .two img{
@@ -20,7 +21,11 @@
 }
 
 
-
+.three{
+    border: 2px solid red;
+    text-align: center;
+    font-size: 22px;
+}
 
 
 
@@ -39,12 +44,38 @@
 }
 
 .abc{
-    border: 1px solid red;
+  
     width:40%;
-    margin-left: 35%;
+    margin-left: 25%;
 }
 
 
 #size{
     width: 100px;
 }
+
+.btn1{
+   
+   
+    border:1px solid red;
+    width:80px;
+    margin-top: 20px;
+}
+
+.btn2{
+   
+   margin-top: 20px;
+    border:1px solid red;
+    width:80px
+}
+
+
+#button{
+    margin-top: 20px;
+    width:120px;
+    background-color:#fe0039;
+     color:white
+}
+
+
+
