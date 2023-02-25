@@ -74,7 +74,7 @@ const HomeProductBox = () => {
     return (
       <Box bg="#f6f6f6" >
         {/* Top image */}
-        <Box p="1rem" w="80%" m="auto">
+        <Box p="1rem" w="95%" m="auto">
           <Image
             w="95%"
             m="auto"
@@ -84,7 +84,7 @@ const HomeProductBox = () => {
   
         {/* End */}
         <Box mt="2rem">
-        <Box display="flex" justifyContent="space-between" px="2rem" w="80%" m="auto" mb="0.5rem">
+        <Box display="flex" justifyContent="space-between" px="2rem" w="90%" m="auto" mb="0.5rem">
           <Text
             pl="2rem"
             fontWeight={"400"}
@@ -110,7 +110,7 @@ const HomeProductBox = () => {
         </Box>
 
         <Box mt="2rem">
-          <Box display="flex" justifyContent="space-between" px="2rem"  w="80%" m="auto" mb="0.5rem">
+          <Box display="flex" justifyContent="space-between" px="2rem"  w="90%" m="auto" mb="0.5rem">
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Featured Brands
             </Text>
@@ -137,7 +137,7 @@ const HomeProductBox = () => {
             justifyContent="space-between"
             px="2rem"
             mb="0.5rem"
-            w="80%" m="auto" 
+            w="90%" m="auto" 
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Baidyanath | supplement of the week
@@ -159,7 +159,7 @@ const HomeProductBox = () => {
         </Box>
   
         <Box mt="2rem">
-        <Box display="flex" justifyContent="space-between" px="2rem"  w="80%" m="auto" mb="0.5rem">
+        <Box display="flex" justifyContent="space-between" px="2rem"  w="90%" m="auto" mb="0.5rem">
           <Text
             pl="2rem"
             fontWeight={"400"}
@@ -194,7 +194,7 @@ const HomeProductBox = () => {
             justifyContent="space-between"
             px="2rem"
             mb="0.5rem"
-            w="80%" m="auto" 
+            w="90%" m="auto" 
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Liver Care
@@ -219,7 +219,7 @@ const HomeProductBox = () => {
         {/* brands */}
   
         <Box mt="2rem">
-          <Box display="flex" justifyContent="space-between" px="2rem"  w="80%" m="auto" mb="0.5rem">
+          <Box display="flex" justifyContent="space-between" px="2rem"  w="90%" m="auto" mb="0.5rem">
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               HealthCare Devices -top brands
             </Text>
@@ -246,7 +246,7 @@ const HomeProductBox = () => {
             justifyContent="space-between"
             px="2rem"
             mb="0.5rem"
-            w="80%" m="auto" 
+            w="90%" m="auto" 
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Top Sellers From Ensure
@@ -275,7 +275,7 @@ const HomeProductBox = () => {
             justifyContent="space-between"
             px="2rem"
             mb="0.5rem"
-            w="80%" m="auto"
+            w="90%" m="auto"
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Super Saving Deals
@@ -302,7 +302,7 @@ const HomeProductBox = () => {
             justifyContent="space-between"
             px="2rem"
             mb="0.5rem"
-            w="80%" m="auto" 
+            w="90%" m="auto" 
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Eye Care
@@ -326,7 +326,7 @@ const HomeProductBox = () => {
   
         {/* brands */}
         <Box mt="2rem">
-          <Box display="flex" justifyContent="space-between" px="2rem"  w="80%" m="auto" mb="0.5rem">
+          <Box display="flex" justifyContent="space-between" px="2rem"  w="90%" m="auto" mb="0.5rem">
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Baby Care
             </Text>
@@ -353,7 +353,7 @@ const HomeProductBox = () => {
             justifyContent="space-between"
             px="2rem"
             mb="0.5rem"
-            w="80%" m="auto" 
+            w="90%" m="auto" 
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Dabur | Deal of the Day

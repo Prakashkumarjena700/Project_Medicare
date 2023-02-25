@@ -29,7 +29,7 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
 
   return (
     <Box backgroundColor="#ffffff">
-    <Box bg="white" p="1rem" w="80%" m="auto" h="390px">
+    <Box bg="white" p="1rem" w="100%" m="auto" h="370px">
       <Carousel
         swipeable={true}
         draggable={true}
@@ -62,7 +62,7 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
             <Box h={"175px"}>
               <Image h={"100%"} w={"80%"} m="auto" src={e.img1} />
             </Box>
-            <Box h={"120px"} >
+            <Box h={"90px"} >
               <Text fontSize={"16px"}>{e.name}</Text>
               <Text fontSize={"16px"}>{e.form}</Text>
               
@@ -85,11 +85,11 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
                       />
                     ))}
           <Box as='span' ml='2' color='gray.600' fontSize='sm'>
-            {e.rating} reviews
+            {e.rating} 
           </Box>
         </Box>
              
-               <Text fontWeight={"600"}>MRP ₹ {e.price}</Text>
+               <Text fontWeight={"300"}>MRP ₹ {e.price}</Text>
               </Box>
           </Box>
         ))}
