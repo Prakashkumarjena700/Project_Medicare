@@ -4,6 +4,12 @@ import Home from "../Components/Home/Home";
 import { Products } from "../Components/ProductPage/Products";
 import ProductDetails from "../Components/ProductsDetailsPage/ProductsDetails";
 
+import AdminSignin from '../Admin/AdminSignin'
+
+import Inventory from '../Admin/Inventory'
+
+import Signup from "../Components/Pages/Signup";
+import Login from "../Components/Pages/Login"
 
 import Inventory from '../Admin/Inventory'
 
@@ -20,16 +26,23 @@ import CarePlan from "../Components/CarePlan/CarePlan";
 
 
 
+
 export default function AllRoutes() {
 
     return (
         <Routes>
             <Route path='/' element={<Home />} ></Route>
-            <Route path='/admin' element={<Admin />} ></Route>
+          
             <Route path='/adminsignin' element={<AdminSignin />} ></Route>
             <Route path='/inventory' element={<Inventory />} ></Route>
             <Route path="/product" element={<Products />}></Route>
             <Route path="/product/:id" element={<ProductDetails />}></Route>
+
+            <Route path="/allProducts" element={<Products/>}></Route>
+            <Route path="/signup" element={<Signup/>}></Route>
+            <Route path="/login" element={<Login/>}></Route>
+           
+
             <Route path="/labtests" element={<LabTests/>} ></Route>
             <Route path="/ayurveda" element={<Ayurveda/>} ></Route>
             <Route path="/careplan" element={<CarePlan/>} ></Route>
@@ -37,6 +50,7 @@ export default function AllRoutes() {
       <Route path="/addresspage" element={<Address />}></Route>
       <Route path="summarypage" element={<Summary />}></Route>
       <Route path="/payment" element={<Payment />}></Route>
+
         </Routes>
     )
 

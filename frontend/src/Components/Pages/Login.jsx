@@ -14,14 +14,18 @@ import {
   Button,
   FormLabel,
   useColorModeValue,
+  useToast
 } from "@chakra-ui/react";
 
 import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
+  const toast=useToast()
+  const navigate = useNavigate();
 
   const handleSubmit = () => {
     const payload = {
@@ -40,6 +44,21 @@ const Login = () => {
       .then((res) => {
         console.log(res);
         localStorage.setItem("token", res.token);
+
+        toast({
+          title: 'Account created.',
+          description: "You are Successfully Login.",
+          status: "success",
+          duration: 3000,
+          variant: "solid",
+          isClosable: true,
+          position: "top",
+        })
+
+        setTimeout(() => {
+          navigate("/");
+        },2000)
+
       })
       .catch((err) => console.log(err));
   };

@@ -93,7 +93,7 @@ import {
               aria-label={'Toggle Navigation'}
             />
           </Flex>
-          <Flex flex={{ base: 1 }} justify={{ base:'center', md: 'start' }}>
+          <Flex flex={{ base: 1 }} justify={{ base:'center', md: 'start' }} >
             <Image  height={10} width={20} src={Logo}>
              
             </Image>
@@ -187,7 +187,8 @@ import {
                 <Link
                   p={2}
                   href={navItem.href ?? '#'}
-                  fontSize={'md'}
+                  fontSize={{md:"sm",lg:"md"}}
+                  width={{md:"40%"}}
                   fontWeight={600}
                   color={"black"}
                   _hover={{
@@ -234,7 +235,9 @@ import {
             <Text
               transition={'all .3s ease'}
               _groupHover={{ color: 'pink.400' }}
-              fontWeight={500}>
+              fontWeight={500}
+             
+              >
               {label}
             </Text>
             <Text fontSize={'sm'}>{subLabel}</Text>

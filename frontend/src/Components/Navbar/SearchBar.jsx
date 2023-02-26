@@ -72,7 +72,10 @@ function SearchBar() {
               borderRadius={"5px"}
               fontSize={"16px"}
               fontWeight="300"
-              _hover={{}}
+              _hover={{
+               bg: "gray.200",
+                color:"white"
+              }}
               py="0px"
             >
               ADMIN
