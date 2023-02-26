@@ -3,13 +3,12 @@ import {
   Table,
   Thead,
   Tbody,
-  Tfoot,
   Tr,
   Th,
   Td,
-  Button,
+
   TableContainer,
-  Box
+
 } from '@chakra-ui/react'
 import './styles/Inventory.css'
 import axios from 'axios'
