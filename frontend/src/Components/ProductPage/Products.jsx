@@ -1,37 +1,100 @@
 import React, { useEffect, useState } from "react";
 import "./Products.css";
 import { ProductsCart } from "./ProductsCart";
-import { Flex, SimpleGrid } from "@chakra-ui/react";
+import { Flex, SimpleGrid, FormControl, Button } from "@chakra-ui/react";
 import axios from "axios";
 import "./Sidebar.css";
 import Footer from "../Footer/Footer";
 import Navbar from "../Navbar/Navbar";
 import CategoryBar from "../Navbar/CategoryBar";
+import { useSearchParams } from "react-router-dom";
 
 export const Products = () => {
   const [data, setData] = useState([]);
   const [value, setValue] = useState("");
   const [isChecked, setIsChecked] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [query, setQuery] = useState(true);
+  const [page, setPage] = useState(0);
 
-  const fetchData = () => {
-    return axios.get(`https://glamorous-jumpsuit.cyclic.app/data/`);
+  const SortBy = (head, val, e) => {
+    let searchobj = {};
+    if (searchParams.get("sort")) {
+      searchobj.sort = searchParams.get("sort");
+    }
+    if (searchParams.get("order")) {
+      searchobj.order = searchParams.get("order");
+    }
+    if (searchParams.get("brand")) {
+      searchobj.brand = searchParams.get("brand");
+    }
+    if (searchParams.get("uses")) {
+      searchobj.uses = searchParams.get("uses");
+    }
+
+    if (head === "price" && val == 1) {
+      searchobj.sort = "price";
+      searchobj.order = 1;
+    }
+    if (head === "price" && val == -1) {
+      searchobj.sort = "price";
+      searchobj.order = -1;
+    }
+    if (head === "rating" && val == 1) {
+      searchobj.sort = "rating";
+      searchobj.order = 1;
+    }
+    if (head === "rating" && val == -1) {
+      searchobj.sort = "rating";
+      searchobj.order = -1;
+    }
+
+    if (e.target.checked === true) {
+      if (head === "brand") {
+        searchobj.brand = val;
+      } else if (head === "uses") {
+        searchobj.uses = val;
+      }
+    } else if (e.target.checked === false) {
+      if (head === "brand") {
+        if (searchobj.brand === val) {
+          delete searchobj.brand;
+        }
+      } else if (head === "uses") {
+        if (searchobj.uses === val) {
+          delete searchobj.uses;
+        }
+      }
+    }
+
+    setSearchParams(searchobj);
+    // console.log("searchobj", searchobj);
+    setQuery(!query);
   };
-
 
   const handleOnChange = (e) => {
-
-    console.log(e.target.value, "val");
-    console.log(e.target.checked, "checked");
-    console.log(e, "e");
+    // console.log(e.target.value, "val");
+    // console.log(e.target.checked, "checked");
+    // console.log(e, "e");
   };
   useEffect(() => {
-    fetchData()
+    axios
+      // https://glamorous-jumpsuit.cyclic.app/data/?sort=name&order=1
+      .get(
+        `https://glamorous-jumpsuit.cyclic.app/data/?limit=12&skip=${page}${
+          searchParams.get("sort") ? `&sort=${searchParams.get("sort")}` : ``
+        }${
+          searchParams.get("order") ? `&order=${searchParams.get("order")}` : ``
+        }${
+          searchParams.get("brand") ? `&brand=${searchParams.get("brand")}` : ``
+        }${searchParams.get("uses") ? `&uses=${searchParams.get("uses")}` : ``}`
+      )
       .then((res) => {
         setData(res.data);
-        console.log(res.data);
+        // console.log(res.data);
       })
       .catch((err) => console.log(err));
-  }, []);
+  }, [query, page]);
 
   return (
     <>
@@ -55,81 +118,146 @@ export const Products = () => {
               <Flex justifyContent={"space-between"}>
                 <div>
                   <input
+                    id="Tata 1mg"
                     type="checkbox"
-                    value="Tata 1mg"
-                    // checked={isChecked}
-                    onChange={(e) => handleOnChange(e)}
+                    onChange={(e) => SortBy("brand", "Tata 1mg", e)}
                   />
-                  <label>Tata 1mg</label>
+                  <label for="Tata 1mg">Tata 1mg</label>
                 </div>
               </Flex>
               <Flex justifyContent={"space-between"}>
                 <div>
                   <input
+                    id="Sugar Free"
                     type="checkbox"
-                    value="Other"
-                    onChange={(e) => handleOnChange(e)}
+                    onChange={(e) => SortBy("brand", "Sugar Free", e)}
                   />
-                  <label>Other</label>
+                  <label for="Sugar Free">Sugar Free</label>
                 </div>
               </Flex>
               <Flex justifyContent={"space-between"}>
                 <div>
                   <input
+                    id="Protinex"
                     type="checkbox"
-                    value="Mom & World"
-                    onChange={(e) => handleOnChange(e)}
+                    onChange={(e) => SortBy("brand", "Protinex", e)}
                   />
-                  <label>Mom & World</label>
+                  <label for="Protinex">Protinex</label>
                 </div>
               </Flex>
               <Flex justifyContent={"space-between"}>
                 <div>
                   <input
+                    id="Cetaphil"
                     type="checkbox"
-                    value="MuscleXP"
-                    checked={isChecked}
-                    onChange={(e) => handleOnChange(e.target.value)}
+                    onChange={(e) => SortBy("brand", "Cetaphil", e)}
                   />
-                  <label>MuscleXP</label>
+                  <label for="Cetaphil">Cetaphil</label>
                 </div>
               </Flex>
               <Flex justifyContent={"space-between"}>
                 <div>
                   <input
+                    id="Oziva"
                     type="checkbox"
-                    value="Horlicks"
-                    checked={isChecked}
-                    onChange={(e) => handleOnChange(e.target.value)}
+                    onChange={(e) => SortBy("brand", "Oziva", e)}
                   />
-                  <label>Horlicks</label>
+                  <label for="Oziva">Oziva</label>
                 </div>
               </Flex>
               <Flex justifyContent={"space-between"}>
                 <div>
                   <input
+                    id="Dr Morepen"
                     type="checkbox"
-                    value="Jiva"
-                    checked={isChecked}
-                    onChange={(e) => handleOnChange(e.target.value)}
+                    onChange={(e) => SortBy("brand", "Dr Morepen", e)}
                   />
-                  <label>Jiva</label>
+                  <label for="Dr Morepen">Dr Morepen</label>
                 </div>
               </Flex>
               <Flex justifyContent={"space-between"}>
                 <div>
                   <input
+                    id="Dr Reddy's"
                     type="checkbox"
-                    value="Optimum Nutrition"
-                    checked={isChecked}
-                    onChange={(e) => handleOnChange(e.target.value)}
+                    onChange={(e) => SortBy("brand", "Dr Reddy's", e)}
                   />
-                  <label>Optimum Nutrition</label>
+                  <label for="Dr Reddy's">Dr Reddy's</label>
+                </div>
+              </Flex>
+              <Flex justifyContent={"space-between"}>
+                <div>
+                  <input
+                    id="Dabur"
+                    type="checkbox"
+                    onChange={(e) => SortBy("brand", "Dabur", e)}
+                  />
+                  <label for="Dabur">Dabur</label>
+                </div>
+              </Flex>
+              <Flex justifyContent={"space-between"}>
+                <div>
+                  <input
+                    id="Baidyanath"
+                    type="checkbox"
+                    onChange={(e) => SortBy("brand", "Baidyanath", e)}
+                  />
+                  <label for="Baidyanath">Baidyanath</label>
+                </div>
+              </Flex>
+              <Flex justifyContent={"space-between"}>
+                <div>
+                  <input
+                    id="Himalaya"
+                    type="checkbox"
+                    onChange={(e) => SortBy("brand", "Himalaya", e)}
+                  />
+                  <label for="Himalaya">Himalaya</label>
+                </div>
+              </Flex>
+              <Flex justifyContent={"space-between"}>
+                <div>
+                  <input
+                    id="Zandu"
+                    type="checkbox"
+                    onChange={(e) => SortBy("brand", "Zandu", e)}
+                  />
+                  <label for="Zandu">Zandu</label>
+                </div>
+              </Flex>
+              <Flex justifyContent={"space-between"}>
+                <div>
+                  <input
+                    id="Hamdard"
+                    type="checkbox"
+                    onChange={(e) => SortBy("brand", "Hamdard", e)}
+                  />
+                  <label for="Hamdard">Hamdard</label>
+                </div>
+              </Flex>
+              <Flex justifyContent={"space-between"}>
+                <div>
+                  <input
+                    id="Wow"
+                    type="checkbox"
+                    onChange={(e) => SortBy("brand", "Wow", e)}
+                  />
+                  <label for="Wow">Wow</label>
+                </div>
+              </Flex>
+              <Flex justifyContent={"space-between"}>
+                <div>
+                  <input
+                    id="Patanjali"
+                    type="checkbox"
+                    onChange={(e) => SortBy("brand", "Patanjali", e)}
+                  />
+                  <label for="Patanjali">Patanjali</label>
                 </div>
               </Flex>
             </div>
 
-            {/* ----------------------------Filter by discount---------------------------------------------- */}
+            {/* ----------------------------Filter by speciality---------------------------------------------- */}
 
             <div className="discount">
               <div
@@ -140,50 +268,101 @@ export const Products = () => {
                   marginTop: "10px",
                 }}
               >
-                DISCOUNTS
+                SPECIALITY
               </div>
-              <div>
-                <Flex>
-                  <input
-                    type="checkbox"
-                    value="0"
-                    checked={isChecked}
-                    onChange={(e) => handleOnChange(e.target.value)}
-                  />
-                  <label>Reset Filter</label>
-                </Flex>
-              </div>
+
               <Flex justifyContent={"space-between"}>
                 <div>
                   <input
+                    id="Eye Care"
                     type="checkbox"
-                    value="10"
-                    checked={isChecked}
-                    onChange={(e) => handleOnChange(e.target.value)}
+                    onChange={(e) => SortBy("uses", "Eye Care", e)}
                   />
-                  <label>10% and above</label>
+                  <label for="Eye Care">Eye Care</label>
                 </div>
               </Flex>
               <Flex justifyContent={"space-between"}>
                 <div>
                   <input
+                    id="Liver Care"
                     type="checkbox"
-                    value="20"
-                    checked={isChecked}
-                    onChange={(e) => handleOnChange(e.target.value)}
+                    onChange={(e) => SortBy("uses", "Liver Care", e)}
                   />
-                  <label>20% and above</label>
+                  <label for="Liver Care">Liver Care</label>
                 </div>
               </Flex>
               <Flex justifyContent={"space-between"}>
                 <div>
                   <input
+                    id="Derma Care"
                     type="checkbox"
-                    value="30"
-                    checked={isChecked}
-                    onChange={(e) => handleOnChange(e.target.value)}
+                    onChange={(e) => SortBy("uses", "Derma Care", e)}
                   />
-                  <label>30% and above</label>
+                  <label for="Derma Care">Derma Care</label>
+                </div>
+              </Flex>
+              <Flex justifyContent={"space-between"}>
+                <div>
+                  <input
+                    id="Stomach Care"
+                    type="checkbox"
+                    onChange={(e) => SortBy("uses", "Stomach Care", e)}
+                  />
+                  <label for="Stomach Care">Stomach Care</label>
+                </div>
+              </Flex>
+              <Flex justifyContent={"space-between"}>
+                <div>
+                  <input
+                    id="Diabetes Care"
+                    type="checkbox"
+                    onChange={(e) => SortBy("uses", "Diabetes Care", e)}
+                  />
+                  <label for="Diabetes Care">Diabetes Care</label>
+                </div>
+              </Flex>
+              <Flex justifyContent={"space-between"}>
+                <div>
+                  <input
+                    id="Cardiac Care"
+                    type="checkbox"
+                    onChange={(e) => SortBy("uses", "Cardiac Care", e)}
+                  />
+                  <label for="Cardiac Care">Cardiac Care</label>
+                </div>
+              </Flex>
+              <Flex justifyContent={"space-between"}>
+                <div>
+                  <input
+                    id="Bone, Joint and Muscle Care"
+                    type="checkbox"
+                    onChange={(e) =>
+                      SortBy("uses", "Bone, Joint and Muscle Care", e)
+                    }
+                  />
+                  <label for="Bone, Joint and Muscle Care">
+                    Bone, Joint and Muscle Care
+                  </label>
+                </div>
+              </Flex>
+              <Flex justifyContent={"space-between"}>
+                <div>
+                  <input
+                    id="Kidney Care"
+                    type="checkbox"
+                    onChange={(e) => SortBy("uses", "Kidney Care", e)}
+                  />
+                  <label for="Kidney Care">Kidney Care</label>
+                </div>
+              </Flex>
+              <Flex justifyContent={"space-between"}>
+                <div>
+                  <input
+                    id="Respiratory Care"
+                    type="checkbox"
+                    onChange={(e) => SortBy("uses", "Respiratory Care", e)}
+                  />
+                  <label for="Respiratory Care">Respiratory Care</label>
                 </div>
               </Flex>
             </div>
@@ -211,7 +390,22 @@ export const Products = () => {
                     Sort By
                   </h2>
                   <select
-                    // onChange={(e) => handelSelect(e.target.value)}
+                    onChange={(e) =>
+                      //  SortBy(value,"PENCIL", e)
+                      {
+                        if (e.target.value == "plth") {
+                          SortBy("price", 1, e);
+                        } else if (e.target.value == "phtl") {
+                          SortBy("price", -1, e);
+                        } else if (e.target.value == "rlth") {
+                          SortBy("rating", 1, e);
+                        } else if (e.target.value == "rhtl") {
+                          SortBy("rating", -1, e);
+                        } else {
+                          SortBy("", "", e);
+                        }
+                      }
+                    }
                     style={{
                       border: "1px solid grey",
                       fontWeight: "600",
@@ -235,6 +429,20 @@ export const Products = () => {
           </SimpleGrid>
         </div>
       </div>
+      <button
+        className="prevbtn"
+        onClick={() => setPage(page - 12)}
+        disabled={page < 12}
+      >
+        Prev
+      </button>
+      <button
+        className="prevbtn"
+        onClick={() => setPage(page + 12)}
+        disabled={page >= 96}
+      >
+        Next
+      </button>
       <Footer />
     </>
   );
