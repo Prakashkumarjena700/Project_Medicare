@@ -19,17 +19,22 @@ import {
   useDisclosure,
   FormControl,
   Input,
-  Flex
+  Flex,
+  CloseButton,
+  useToast,
+  
 } from "@chakra-ui/react";
 
 import "./styles/Inventory.css";
 
 import { MdOutlineDeleteOutline } from "react-icons/md";
 import { AiFillEdit } from "react-icons/ai";
-import {AiOutlineSortAscending,AiOutlineSortDescending} from "react-icons/ai"
+import {FaSortNumericUpAlt,FaSortNumericDownAlt} from "react-icons/fa"
+import {BiSortAZ,BiSortZA,BiSearchAlt2} from "react-icons/bi"
 import axios from "axios";
 
 const Inventory = () => {
+  const Toast = useToast()
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const initialRef = React.useRef(null);
@@ -41,20 +46,24 @@ const Inventory = () => {
 
   const [data, setData] = useState([]);
   const [skip, setSkip] = useState(0);
-  
+  const [show, setShow] = useState(false);
   const [update, setUpdate] = useState("");
+  const [searchName,SetSearchName] =useState("")
+  
 
   useEffect(() => {
     fetchData();
-  }, [skip]);
+  }, [skip,searchName]);
 
   const fetchData = async () => {
     let res = await axios.get(
-      `https://glamorous-jumpsuit.cyclic.app/data?limit=5&skip=${skip}`
+      `https://glamorous-jumpsuit.cyclic.app/data/?q=${searchName}&limit=5&skip=${skip}`
     );
     //  console.log(res.data.length)
     setData(res.data);
   };
+
+// console.log(data)
 
   async function UpdateData(id) {
     const payload = {
@@ -87,7 +96,7 @@ const Inventory = () => {
     );
     //  console.log(res.data.length)
     setData(res.data);
-    fetchData();
+    // fetchData();
   };
 
   const descendingbrand = async () => {
@@ -96,7 +105,7 @@ const Inventory = () => {
     );
     //  console.log(res.data.length)
     setData(res.data);
-    fetchData();
+    // fetchData();
   };
 
 // <-----------------sorting by price --------------->
@@ -104,19 +113,32 @@ const Inventory = () => {
     let res = await axios.get(
       `https://glamorous-jumpsuit.cyclic.app/data/?sort=price&order=1`
     );
-    //  console.log(res.data.length)
+     console.log(res.data)
     setData(res.data);
-    fetchData();
+    // fetchData();
   };
 
   const descendingprice = async () => {
     let res = await axios.get(
       `https://glamorous-jumpsuit.cyclic.app/data/?sort=price&order=-1`
     );
-    //  console.log(res.data.length)
+  
     setData(res.data);
-    fetchData();
+    
   };
+ 
+
+
+  const search = async () => {
+    // let res = await axios.get(
+    //   `https://glamorous-jumpsuit.cyclic.app/data/?q=name`
+    // );
+    // setData(res.data);
+    
+  };
+ 
+
+
 
   return (
     <>
@@ -127,35 +149,63 @@ const Inventory = () => {
               <Th fontSize={"18px"} className="three">
                 Image
               </Th>
-              <Th fontSize={"18px"} className="three">
-              <Flex gap={"20px"}>
-              <AiOutlineSortAscending id="fsize"  />
-              Name
-                <AiOutlineSortDescending  id="fsize"/>
-                </Flex>
+               <Th>
+               <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    width: "235px",
+                  }}
+                >
+                  <p  style={{ display: show ? "none" : "flex" ,fontSize:"20px" ,marginLeft:"70px" ,marginTop:"5px",color:"#4a5568",fontWeight:"bold"}}>NAME</p>
+                  {show ? (
+                    <Input
+                    border={"1px solid black"}
+                      type={"search"}
+                      w={"780px"}
+                      h={"40px"}
+                     onChange={(e)=>SetSearchName(e.target.value)}
+                     
+                    ></Input>
+                  ) : null}
 
-              </Th>
+                  <button onClick={() => setShow(true)}>
+                    <BiSearchAlt2  fontSize={25} onClick={()=>search()} mt={"25px"}  />
+                  </button>
+                  <button
+                    onClick={() => setShow(false)}
+                    style={{ display: show ? "flex" : "none",marginLeft:"20px" }}
+                  >
+                    <CloseButton fontSize={15} mt={"5px"}  />
+                  </button>
+                </div>
+
+                </Th>
+
+
               <Th fontSize={"18px"} className="three">
                 Product Id
               </Th>
 
               <Th fontSize={"18px"} className="three">
                 <Flex gap={"20px"}>
-                <AiOutlineSortAscending  onClick={()=>ascendingprice()} id="fsize" />
+                <FaSortNumericUpAlt   onClick={()=>ascendingprice()} id="fsize" />
                 Price
-                <AiOutlineSortDescending onClick={()=>descendingprice()}  id="fsize"/>
+                <FaSortNumericDownAlt onClick={()=>descendingprice()}  id="fsize"/>
                 </Flex>
                
                  
               </Th>
               <Th fontSize={"18px"} className="three">
                 <Flex gap={"20px"}>
-              <AiOutlineSortAscending onClick={()=>ascendingbrand()} id="fsize" />
+              <BiSortAZ onClick={()=>ascendingbrand()} id="fsize" />
+          
               Brand
-                <AiOutlineSortDescending  onClick={()=>descendingbrand()}  id="fsize"/>
+              <BiSortZA  onClick={()=>descendingbrand()}  id="fsize"/>
+               
                 </Flex>
               </Th>
-              <Th fontSize={"18px"} className="three">
+              <Th fontSize={"18px"} className="three"  >
                 Edit
               </Th>
               <Th fontSize={"18px"} className="three">
@@ -173,7 +223,7 @@ const Inventory = () => {
                     <img src={ele.img1} alt="" />{" "}
                   </Td>
 
-                  <Td>{ele.name.substring(0, 35)}</Td>
+                  <Td >{ele.name.substring(0,30)}</Td>
                   <Td>{ele._id}</Td>
                   <Td>₹ {ele.price}</Td>
                   <Td>{ele.brand}</Td>
@@ -186,9 +236,19 @@ const Inventory = () => {
                     <button>
                       <MdOutlineDeleteOutline
                         fontSize={"30px"}
-                        onClick={() => Delete(ele._id)}
+                        // onClick={() => Delete(ele._id)}
+                        onClick={() => {
+                          Delete(ele._id);
+                          Toast({
+                            title: " Product Deleted",
+                            position: 'top',
+                            status: "success",
+                            duration: 4000,
+                            isClosable: true,
+                          });
+                        }}
                       />
-                    </button>{" "}
+                    </button>
                   </Td>
                 </Tr>
               </Tbody>
@@ -251,7 +311,17 @@ const Inventory = () => {
             <Button
               colorScheme="blue"
               mr={3}
-              onClick={() => UpdateData(update)}
+              // onClick={() => UpdateData(update)}
+              onClick={() => {
+                UpdateData(update)
+                Toast({
+                  title: " Product Edited",
+                  position: 'top',
+                  status: "success",
+                  duration: 4000,
+                  isClosable: true,
+                });
+              }}
             >
               Save
             </Button>
