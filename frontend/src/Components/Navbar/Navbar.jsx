@@ -94,7 +94,7 @@ import {
             />
           </Flex>
           <Flex flex={{ base: 1 }} justify={{ base:'center', md: 'start' }} >
-            <Image  height={10} width={20} src={Logo}>
+            <Image  height={10} width={"140px"} src={Logo}>
              
             </Image>
   
@@ -179,7 +179,7 @@ import {
     const popoverContentBgColor = useColorModeValue('white', 'gray.800');
   
     return (
-      <Stack direction={'row'} spacing={4}>
+      <Stack direction={'row'} spacing={4}  border={"0px solid red"} padding={2}>
         {NAV_ITEMS.map((navItem) => (
           <Box key={navItem.label}>
             <Popover trigger={'hover'} placement={'bottom-start'}>
@@ -190,6 +190,7 @@ import {
                   fontSize={{md:"sm",lg:"md"}}
                   width={{md:"40%"}}
                   fontWeight={600}
+                 
                   color={"black"}
                   _hover={{
                     textDecoration: 'none',
