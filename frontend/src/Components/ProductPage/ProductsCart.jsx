@@ -21,6 +21,38 @@ export const ProductsCart = ({ product }) => {
     // console.log(id, "id");
   };
 
+  const handleAddToCart = (data) => {
+    const objData = {
+      name: data.name,
+      highlights: data.highlights,
+      price: data.price,
+      brand: data.brand,
+      uses: data.uses,
+      form: data.form,
+      rating: data.rating,
+      img1: data.img1,
+      img2: data.img2,
+      img3: data.img3,
+      img4: data.img4,
+      img5: data.img5,
+    };
+
+    fetch("https://glamorous-jumpsuit.cyclic.app/cart/add", {
+      method: "POST",
+      headers: {
+        "Content-type": "application/json",
+        Authorization: localStorage.getItem("token"),
+      },
+      body: JSON.stringify(objData),
+    })
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+    alert("Product Added To Cart").catch((err) => console.log(err));
+
+    console.log("cart", data);
+    // navigate("/cart");
+  };
+
   return (
     <div className="productCart_container" style={{ backgroundColor: "white" }}>
       <div
@@ -61,7 +93,7 @@ export const ProductsCart = ({ product }) => {
             >
               <Flex gap={1} ptb={1} style={{ fontWeight: "800" }}>
                 <p style={{ color: "#FFFFFF", fontSize: "12px" }}>
-                  {product.ratings}
+                  {product.rating}
                 </p>
                 <div style={{ color: "#FFFFFF", fontSize: "12px" }}>
                   <ImStarEmpty />
@@ -95,7 +127,7 @@ export const ProductsCart = ({ product }) => {
               gap={1}
               alignItems="center"
               className="add_btn"
-              //   onClick={() => handleAddToCart(product._id)}
+              onClick={() => handleAddToCart(product)}
             >
               <FaCartPlus />
               ADD
