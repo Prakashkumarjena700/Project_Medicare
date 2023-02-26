@@ -76,7 +76,7 @@ const ProductDetails = () => {
       <CategoryBar />
       <div id="product">
         <div className="productdel">
-          <div>
+          <div style={{  border:"1px solid gray" ,height:"500px",borderRadius:"10px" }}>
             <div className="productimg">
               <img
                 onClick={() => setImg(data?.img1)}
@@ -141,7 +141,7 @@ const ProductDetails = () => {
                 margin: "10px",
                 fontSize: "15px",
                 lineHeight: "17px",
-                color: "#ff6f61",
+                
               }}
             >
               {data?.brand || "Tata 1mg Healthcare Solutions Private Limited"}
@@ -152,7 +152,8 @@ const ProductDetails = () => {
                 flexDirection: "row",
                 alignItems: "center",
                 borderRadius: "2x",
-                bagroundColor: "#1aab2a",
+                backgroundColor: "#1aab2a",
+                // color:black
                 fontWeight: "bold",
                 fontSize: "19px",
                 margin: "10px",
@@ -172,10 +173,11 @@ const ProductDetails = () => {
             </p>
             <div
               style={{
-                margin: "10px",
+                margin: "15px",
+                marginTop:"30px",
                 fontSize: "15px",
                 lineHeight: "17px",
-                color: "#ff6f61",
+                
               }}
             >
               <img
@@ -187,7 +189,7 @@ const ProductDetails = () => {
                   marginTop: "-25px",
                   fontSize: "15px",
                   lineHeight: "17px",
-                  color: "#ff6f61",
+                 
                   marginLeft: "40px",
                 }}
               >
@@ -212,11 +214,11 @@ const ProductDetails = () => {
                 }}
               >
                 <div className="bottel">
-                  <p>30 teblets</p>
+                  <p>30 tablets</p>
                   <p>{data?.price || "₹225"}</p>
                 </div>
                 <div className="bottel">
-                  <p>30 teblets</p>
+                  <p>30 tablets</p>
                   <p>₹415</p>
                 </div>
               </div>
@@ -238,10 +240,11 @@ const ProductDetails = () => {
                   alignItems: "center",
                   borderTopLeftRadius: "10px",
                   borderTopRightRadius: "10px",
+                  border:"0px solid red"
                 }}
               >
                 <img
-                  style={{ marginLeft: "10px", width: "20px", height: "20px" }}
+                  style={{ marginLeft: "10px", width: "20px", height: "20px"}}
                   src="https://www.1mg.com/images/social_cue.svg"
                 />
                 <p
@@ -319,36 +322,26 @@ const ProductDetails = () => {
                   src="https://res.cloudinary.com/du8msdgbj/image/upload/v1613645053/marketing/phb2bz61etrdmuurfdoq.png"
                   alt=""
                 />
-                <p
+                {/* <p
                   style={{
                     fontWeight: "400",
                     fontSize: "14px",
-                    marginTop: "25px",
+                    
                     marginLeft: "180px",
+                    border:"1px solid red"
                   }}
                 >
                   member price free shipping and 5% Extra cashback
-                </p>
+                </p> */}
               </div>
-              <div style={{ margin: "20px", fontSize: "15px" }}>
-                <label>Inclusive of all taxes</label>
-                <br />
-                <select>
-                  <option value="1">1 Bottel</option>
-                  <option value="2">2 Bottels</option>
-                  <option value="3">3 Bottels</option>
-                  <option value="4">4 Bottels</option>
-                  <option value="5">5 Bottels</option>
-                  <option value="6">6 Bottels</option>
-                  <option value="7">7 Bottels</option>
-                  <option value="8">8 Bottels</option>
-                  <option value="9">9 Bottels</option>
-                  <option value="10">10 Bottels</option>
-                </select>
-                &nbsp;&nbsp; of 60 bottels
+              <div style={{ fontSize: "15px",border:"0px solid red",display:"flex",margin:"5px"}}>
+                <div style={{ width:"40%",border:"0px solid red" }}>Inclusive of all taxes</div>
+                <div style={{ width:"60%",border:"0px solid red" }}>  member price free shipping and 5% Extra cashback</div>
+                  
               </div>
               <div className="btn">
                 <button
+                 style={{width:"100%",height:"40px",borderRadius:"10px", backgroundColor:" #ee4a3c",color:"white"}}
                   className="btn1"
                   // type="submit"
                   onClick={() => hendelADDToCart(data)}

@@ -4,9 +4,6 @@ import Home from "../Components/Home/Home";
 import { Products } from "../Components/ProductPage/Products";
 import ProductDetails from "../Components/ProductsDetailsPage/ProductsDetails";
 
-import AdminSignin from '../Admin/AdminSignin'
-
-import Inventory from '../Admin/Inventory'
 
 import Signup from "../Components/Pages/Signup";
 import Login from "../Components/Pages/Login"
@@ -18,7 +15,6 @@ import { Address } from "../Components/CartPage/Addresspage";
 import { Summary } from "../Components/CartPage/Summarypage";
 import { Payment } from "../Components/CartPage/Payment";
 
-import Admin from "../Admin/Admin";
 import AdminSignin from "../Admin/AdminSignin";
 import LabTests from "../Components/LabTests/LabTests";
 import Ayurveda from "../Components/Ayurveda/Ayurveda";

@@ -2,24 +2,29 @@
   width: 100%;
   margin-top: 100px;
   margin-bottom: 100px;
+  text-align: left;
 }
 .productdel {
   display: flex;
   gap: 20px;
   /* border:  1px solid rgb(177, 47, 47); */
 
-  width: 80%;
+  width: 90%;
   margin: auto;
 }
 .productimg {
   width: 100px;
   /* border:  1px solid; */
+  margin-left: 40px;
+
+  
+  
 }
 .productimg img {
   width: 60px;
   height: 40px;
   margin: 10px;
-  /* border: 1px solid black; */
+ 
 }
 .producttop {
   width: 400px;
@@ -27,6 +32,8 @@
 .producttop img {
   width: 300px;
   height: 300px;
+  margin-top: 50px;
+  margin-left: 40px;
 }
 .bottel {
   border: 1px solid black;
@@ -86,7 +93,7 @@
 
   font-size: 15px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-  border-radius: 20px;
+  border-radius: 10px;
 }
 .contain {
   color: blue;
@@ -108,16 +115,20 @@
   text-align: initial;
 }
 
-.btn {
-  margin: 10px;
-  font-size: 20px;
+/* .btn1 {
+  /* margin: 10px; */
+  /* font-size: 20px;
   margin-top: 10px;
-  text-align: center;
-  background-color: #ee4a3c;
+  text-align: center; */
+  /* background-color: #ee4a3c; */
   /* height: 60px; */
-  font-weight: bold;
-  color: white;
-}
+  /* font-weight: bold;
+  color: white; */
+/* } */ 
+/* .btn1{
+  border: 1px solid red;
+  display: block;
+} */
 .tbn::after {
   cursor: pointer;
   background-color: #1aab2a;
