@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect ,useState} from 'react'
 import {
   Table,
   Thead,
@@ -12,7 +12,22 @@ import {
   Box
 } from '@chakra-ui/react'
 import './styles/Inventory.css'
+import axios from 'axios'
 const Customers = () => {
+
+  const [data,setData]= useState([])
+
+
+  useEffect(()=>{
+
+      async function fetchdata(){
+        let res= await axios.get(`https://glamorous-jumpsuit.cyclic.app/usersdata`)  
+        console.log(res)
+        setData(res.data)
+      }
+      fetchdata()
+  },[])
+  
   return (
     <>
     <TableContainer  className='one'>
@@ -21,76 +36,33 @@ const Customers = () => {
       <Thead  className='head'>
         <Tr className='two' >
         
-          <Th className='three' >Image</Th>
+
           <Th className='three' >Name</Th>
-          <Th  className='three' >Phone NUmber</Th>
-          <Th className='three' >Product</Th>
-          <Th className='three' >Price</Th>
-          <Th className='three' >Address</Th>
+          <Th  className='three' >Phone Number</Th>
+          <Th className='three' >Email Adress</Th>
+          <Th className='three' >User ID</Th>
+          <Th className='three' >Gender</Th>
         </Tr>
       </Thead>
-      <Tbody>
+
+      {data && data.map((ele)=>{
+        return(
+          <>
+            <Tbody>
         <Tr className='two'>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
+          <Td>{ele.username}</Td>
+          <Td>{ele.number}</Td>
+          <Td >{ele.email}</Td>
+          <Td>{ele._id}</Td>
+          <Td>{ele.gender}</Td>
+         
         </Tr>
-        <Tr className='two' >
-          <Td>feet</Td>
-          <Td>centimetres (cm)</Td>
-          <Td >30.48</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-        </Tr>
-        <Tr className='two' >
-          <Td>yards</Td>
-          <Td>metres (m)</Td>
-          <Td >0.91444</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-        </Tr>
-
-        <Tr className='two' >
-          <Td>yards</Td>
-          <Td>metres (m)</Td>
-          <Td >0.91444</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-        </Tr>
-
-        <Tr  className='two' >
-          <Td>yards</Td>
-          <Td>metres (m)</Td>
-          <Td >0.91444</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-        </Tr>
-
-        <Tr className='two' >
-          <Td>yards</Td>
-          <Td>metres (m)</Td>
-          <Td >0.91444</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-        </Tr>
-
-        <Tr className='two' >
-          <Td>yards</Td>
-          <Td>metres (m)</Td>
-          <Td >0.91444</Td>
-          <Td>inches</Td>
-          <Td>millimetres (mm)</Td>
-          <Td >25.4</Td>
-        </Tr>
+ 
       </Tbody>
+          </>
+        )
+      })}
+    
       {/* <Tfoot>
         <Tr backgroundColor={"white"}>
           <Th>To convert</Th>
@@ -102,14 +74,14 @@ const Customers = () => {
     </Table>
   </TableContainer>
     
-    <Box ml={"45%"} display={"flex"} gap={"10px"}  mt={"20px"}>
+    {/* <Box ml={"45%"} display={"flex"} gap={"10px"}  mt={"20px"}>
     <Button >Previous</Button>
   <Button >1</Button>
   <Button >2</Button>
   <Button >3</Button>
   <Button >4</Button>
   <Button >Next</Button>
-    </Box>
+    </Box> */}
   </>
   )
 }

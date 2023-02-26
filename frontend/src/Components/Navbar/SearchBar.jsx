@@ -49,7 +49,7 @@ import {
   
           <Flex gap={2} align="center" display={{ base: "none", md: "flex" }}>
             <Text fontSize={"14px"}>QUICK BUY! Get 25% off on medicines*</Text>
-            <NavLink to="/admin">
+            <NavLink to="/adminsignin">
             <Button
               px="30px"
               bg={"#ff6f61"}

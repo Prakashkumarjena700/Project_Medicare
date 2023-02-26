@@ -6,7 +6,7 @@ import ProductDetails from "../Components/ProductsDetailsPage/ProductsDetails";
 
 import Admin from "../Admin/Admin";
 import AdminSignin from "../Admin/AdminSignin";
-
+import LabTests from "../Components/LabTests/LabTests";
 import Inventory from "../Admin/Inventory";
 import { Cart } from "../Components/CartPage/Cart";
 import { Address } from "../Components/CartPage/Addresspage";
@@ -26,6 +26,7 @@ export default function AllRoutes() {
       <Route path="/addresspage" element={<Address />}></Route>
       <Route path="summarypage" element={<Summary />}></Route>
       <Route path="/payment" element={<Payment />}></Route>
+<Route path="/labtests" element={<LabTests/>} ></Route>
     </Routes>
   );
 }

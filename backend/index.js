@@ -6,6 +6,7 @@ const { productRoute } = require("./routes/product.route")
 const { cartRoute } = require("./routes/cart.route")
 
 const { productModel } = require("./models/product.model")
+const { userModel } = require("./models/user.model")
 
 const { authenticate } = require("./middlewares/authenticate.middleware")
 const { adminRoute } = require("./routes/admin.route")
@@ -75,10 +76,20 @@ app.get("/data/:_id", async (req, res) => {
     }
 })
 
+
+
 app.use("/users", userRoute)
-app.use("/admin",adminRoute)
-app.use(authenticate)
+app.use("/admin", adminRoute)
+app.get("/usersdata", async (req, res) => {
+    try {
+        let users = await userModel.find()
+        res.send(users)
+    } catch (err) {
+        res.send({ "msg": "Users not found" })
+    }
+})
 app.use("/products", productRoute)
+app.use(authenticate)
 app.use("/cart", cartRoute)
 
 
