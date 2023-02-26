@@ -3,7 +3,7 @@ export const SummaryItem = ({ item }) => {
   console.log(item.name);
   return (
     <div className={styles.Itemconatiner}>
-      <img src={item.img1} alt="icon" width={"40px"} />
+      <img src={item.img1} alt="icon" width={"100px"} />
       <div className={styles.leftitemcontainer}>
         <h6>{item.name}</h6>
         <p>{item.highlights}</p>
