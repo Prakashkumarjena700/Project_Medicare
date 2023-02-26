@@ -271,6 +271,177 @@
     font-size: 16px;
 }
 
+.LTSixFlex {
+    /* border: 1px solid pink; */
+    margin: auto;
+    padding: 30px 10%;
+    background-color: #FBFBFB;
+    margin-top: 70px;
+    margin-bottom: 70px;
+}
+
+.LTSixFlex>div {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 20px;
+    color: #212121;
+}
+
+.LTSixFlex>div:first-child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.LTSixFlex h1 {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+.LTSixFlex>div>div {
+    border: 1px solid rgba(128, 128, 128, 0.382);
+    background-color: white;
+    padding-top: 10px;
+}
+
+.LTSixFlex>div>div img {
+    width: 120px;
+    margin: auto;
+    height: 70px;
+    margin-bottom: 10px;
+}
+
+.LTSixFlex>div>div>div {
+    /* border: 1px solid green; */
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    font-size: 14px;
+}
+
+.LTSixFlex>div>div>div p {
+    display: flex;
+    align-items: center;
+
+}
+
+.LTSixFlex>div>div>div p:first-child {
+    color: white;
+    background-color: #1AAA2A;
+    padding: 0px 5px;
+}
+
+.LTvdodiv {
+    /* border: 1px solid blue; */
+    display: flex;
+    text-align: left;
+    padding: 0px 10%;
+    gap: 30px;
+    color: #212121;
+    margin-bottom: 50px;
+}
+
+.LTvdodiv>div {
+    width: 50%;
+}
+
+.LTvdodiv>div:first-child {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.LTvdodiv h2 {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.vdo {
+    width: 462px;
+    height: 304px;
+}
+
+.LabTests2ndSlider {
+    /* border: 1px solid hotpink; */
+    width: 80%;
+    margin: auto;
+    padding: 20px;
+}
+
+.LTreviewSlider {
+    /* border: 1px solid khaki; */
+    padding: 50px 0px;
+    background-color: #FBFBFB;
+    color: #212121;
+    margin-bottom: 40px;
+}
+
+.LTreviewSlider h2 {
+    font-weight: bold;
+    text-align: left;
+    margin-left: 10%;
+    margin-bottom: 30px;
+    font-size: 25px;
+}
+
+.LabTests3rdSlider {
+    /* border: 1px solid green; */
+    margin: auto;
+    margin-top: 20px;
+}
+
+.LabTests3rdSlider .firstDiv {
+    border: 1px solid rgba(128, 128, 128, 0.39);
+    padding: 20px;
+    margin: 0px 10px;
+}
+
+.LabTests3rdSlider .firstDiv img {
+    margin: auto;
+    height: 50px;
+}
+
+.LabTests3rdSlider .firstDiv h2 {
+    font-weight: 700;
+    font-size: 20px;
+}
+.LTcontactus{
+    /* border: 1px solid gold; */
+    margin: 100px 0px;
+}
+.LTcontactus h2{
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+.LTcontactus button{
+    color: white;
+    background-color: #FF6F61;
+    display: flex;
+    padding: 7px;
+    border-radius: 3px;
+    margin: auto;
+    margin-top: 30px;
+}
+.LTlastdiv{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
+.LTlastdiv h2{
+    font-weight: 500;
+    font-size: 23px;
+    margin-bottom: 5px;
+}
+.LTlastdiv .playstoreBtn{
+    /* border: 1px solid rebeccapurple; */
+    display: flex;
+    gap: 30px;
+    margin-top: 80px;
+}
 @media (max-width:1200px) {
     .Ltfirstdiv {
         padding-left: 5%;
@@ -283,11 +454,16 @@
         grid-template-columns: repeat(1, 1fr);
     }
 
-    .fourFlex{
-        grid-template-columns: repeat(3,1fr);
+    .fourFlex {
+        grid-template-columns: repeat(3, 1fr);
     }
+
     .fourFlex>div:last-child {
         display: none;
+    }
+
+    .LTSixFlex {
+        padding: 30px 50px;
     }
 }
 
@@ -308,23 +484,63 @@
         text-align: center;
     }
 
-}
-@media (max-width:700px) {
-    .fourFlex{
-        grid-template-columns: repeat(2,1fr);
+    .LTvdodiv {
+        flex-direction: column;
     }
+
+    .LTvdodiv div {
+        width: 100%;
+
+    }
+
+    .LabTests3rdSlider .firstDiv {
+        padding: 10px;
+    }
+
+    .LabTests3rdSlider .firstDiv p {
+        font-size: 14px;
+    }
+
+}
+
+@media (max-width:700px) {
+    .fourFlex {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
     .fourFlex>div:nth-child(3) {
         display: none;
     }
+
+    .LTSixFlex>div {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .LabTests3rdSlider {
+        display: none;
+    }
+
+    .labpartnerHeading {
+        display: none;
+    }
 }
+
+@media (max-width:600px) {
+    .vdo {
+        width: 362px;
+        height: 204px;
+    }
+}
+
 @media (max-width:500px) {
     .LTsecondDiv>div {
         grid-template-columns: repeat(1, 1fr);
     }
-   
+
 }
+
 @media (max-width:464px) {
-    .fourFlex{
+    .fourFlex {
         display: flex;
         flex-direction: column;
     }
@@ -337,5 +553,10 @@
 
     .fiveBoxLT p {
         padding: 5px;
+    }
+
+    .vdo {
+        width: 262px;
+        height: 184px;
     }
 }
