@@ -3,8 +3,6 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../Components/Home/Home";
 import { Products } from "../Components/ProductPage/Products";
 import ProductDetails from "../Components/ProductsDetailsPage/ProductsDetails";
-
-
 import Admin from "../Admin/Admin"
 import AdminSignin from '../Admin/AdminSignin'
 
