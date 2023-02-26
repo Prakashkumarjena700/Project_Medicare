@@ -52,7 +52,7 @@ const ProductDetails = () => {
     alert("Product Added To Cart").catch((err) => console.log(err));
 
     console.log("cart", data);
-    navigate("/cart");
+    // navigate("/cart");
   };
 
   useEffect(() => {
