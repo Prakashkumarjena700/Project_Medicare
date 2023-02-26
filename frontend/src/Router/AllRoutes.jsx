@@ -10,6 +10,8 @@ import AdminSignin from '../Admin/AdminSignin'
 
 import Inventory from '../Admin/Inventory'
 import LabTests from "../Components/LabTests/LabTests";
+import Ayurveda from "../Components/Ayurveda/Ayurveda";
+import CarePlan from "../Components/CarePlan/CarePlan";
 
 
 export default function AllRoutes() {
@@ -23,6 +25,8 @@ export default function AllRoutes() {
             <Route path="/product" element={<Products />}></Route>
             <Route path="/product/:id" element={<ProductDetails />}></Route>
             <Route path="/labtests" element={<LabTests/>} ></Route>
+            <Route path="/ayurveda" element={<Ayurveda/>} ></Route>
+            <Route path="/careplan" element={<CarePlan/>} ></Route>
         </Routes>
     )
 }

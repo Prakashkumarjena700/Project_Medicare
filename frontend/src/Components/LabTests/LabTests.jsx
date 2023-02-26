@@ -1,12 +1,15 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
 import "./LabTests.css"
-import { LabTests1stSlider } from './LabTestsSliders'
+import { LabTests1stSlider, LabTests2ndSlider, LabTests3rdSlider } from './LabTestsSliders'
 
-import { AiFillStar, AiOutlineHome } from "react-icons/ai";
+import { AiFillStar, AiOutlineArrowRight, AiOutlineHome } from "react-icons/ai";
 import { MdOutlineDisabledVisible, MdOutlineHealthAndSafety } from 'react-icons/md'
 import { IoIosAddCircleOutline } from 'react-icons/io'
 import { FiSearch } from 'react-icons/fi'
+
+import Upperfooter from "../Home/UpperFooter"
+import Footer from '../Footer/Footer';
 
 export default function LabTests() {
     return (
@@ -154,9 +157,10 @@ export default function LabTests() {
             </div>
             <div className='LTSixFlex' >
                 <div>
-                    <p>Featured Labs</p>
+                    <h1>Featured Labs</h1>
                     <p>VIEW ALL</p>
                 </div>
+                <br />
                 <div>
                     <div>
                         <img src="https://onemg.gumlet.io/diagnostics/b1f8f81e-5677-11ec-9fd9-0a65f29f7340.png?format=auto" alt="" />
@@ -165,9 +169,79 @@ export default function LabTests() {
                             <p>ISO</p>
                         </div>
                     </div>
-                   
+                    <div>
+                        <img src="https://onemg.gumlet.io/diagnostics/mlkrsnvxj3yqtbzxo4wj_new.png?format=auto" alt="" />
+                        <div>
+                            <p>4.9 <AiFillStar /> </p>
+                            <p>ISO</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://onemg.gumlet.io/diagnostics/9a1a8b6a-0430-11ed-a791-02f62d44fe04.png?format=auto" alt="" />
+                        <div>
+                            <p>4.9 <AiFillStar /> </p>
+                            <p>ISO</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://onemg.gumlet.io/diagnostics/Metropolis-logo_new.png?format=auto" alt="" />
+                        <div>
+                            <p>4.9 <AiFillStar /> </p>
+                            <p>ISO</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://onemg.gumlet.io/diagnostics/af9ae47c-e473-11eb-8bd0-028ca395ba2a.png?format=auto" alt="" />
+                        <div>
+                            <p>4.9 <AiFillStar /> </p>
+                            <p>ISO</p>
+                        </div>
+                    </div>
+                    <div>
+                        <img src="https://onemg.gumlet.io/diagnostics/8d2584e0-fde7-11ec-bb3f-023cc772570e.png?format=auto" alt="" />
+                        <div>
+                            <p>4.9 <AiFillStar /> </p>
+                            <p>ISO</p>
+                        </div>
+                    </div>
+
                 </div>
             </div>
+            <div className='LTvdodiv' >
+                <div>
+                    <h2>UNCOMPROMISED QUALITY. RELIABLE RESULTS. ALWAYS.</h2>
+                    <p>Spending hours in a queue at a diagnostic lab or a hospital is now a thing of the past. With Tata 1mg you can get your lab tests done from the comfort of your home. Our highly qualified phlebotomist will collect the samples at your preferred time. Watch this video to see steps taken by us to ensure quality and hygiene in sample collection. Book your next lab test with Tata 1mg at the lowest price guaranteed!</p>
+                </div>
+                <div>
+                    <iframe className='vdo' src="https://www.youtube.com/embed/_Bk2_nFVRI0" title="Tata 1mg Labs - India&#39;s trusted diagnostics lab chain" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+            </div>
+            <div className='LTreviewSlider' >
+                <h2>Our Happy Customers</h2>
+                <LabTests2ndSlider />
+            </div>
+            <h2 className='labpartnerHeading' style={{ fontSize: "25px", marginLeft: '10%', fontWeight: '700', textAlign: 'left' }} >Our Satisfied Lab Partners</h2>
+            <LabTests3rdSlider />
+            <div className='LTcontactus' >
+                <h2>Want to book lab tests in bulk?</h2>
+                <p>Get customized health packages at best prices</p>
+                <button>CONTACT US <AiOutlineArrowRight /> </button>
+            </div>
+            <div className='LTlastdiv' >
+                <div>
+                    <img src="https://onemg.gumlet.io/image/upload/v1572602488/store_creatives_mccvjq.png" alt="" />
+                </div>
+                <div>
+                    <h2>Download the TATA 1mg APP</h2>
+                    <p>Book diagnostics tests online with certified labs at best prices</p>
+                    <div className='playstoreBtn' >
+                        <img width='150px'  src="https://onemg.gumlet.io/search_widget/google-badge_3x.png?format=auto" alt="" />
+                        <img  width='150px' src="https://onemg.gumlet.io/search_widget/appstore-badge_3x.png?format=auto" alt="" />
+                    </div>
+                </div>
+            </div>
+            <Upperfooter/>
+            <Footer/>
         </div>
     )
 }

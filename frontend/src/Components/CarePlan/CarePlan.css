@@ -1,0 +1,133 @@
+.CPfirstDiv {
+    /* border: 1px solid maroon; */
+    display: flex;
+    justify-content: center;
+    padding: 30px 20%;
+    gap: 20px;
+    background-color: #FDF2E3;
+    margin-bottom: 30px;
+}
+
+.CPfirstDiv>div {
+    width: 50%;
+}
+
+.CPfirstDiv div:first-child {
+    display: flex;
+    justify-content: center;
+    align-items: last baseline;
+    flex-direction: column;
+    text-align: left;
+}
+
+.CPfirstDiv div:last-child img {
+    width: 100%;
+}
+
+.CPfirstDiv h2 {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 30px;
+    margin-bottom: 10px;
+}
+
+.CPfirstDiv button {
+    background-color: #FF6F61;
+    width: 50%;
+    color: white;
+    border-radius: 20px;
+    font-size: 20px;
+    margin: 20px 0px 10px 0px;
+}
+
+.CPHeadings {
+    font-weight: 700;
+    font-size: 40px;
+}
+
+.CPsixGrid {
+    /* border: 1px solid red; */
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0px 15%;
+    gap: 3%;
+    row-gap: 30px;
+    margin-bottom: 50px;
+}
+
+.CPsixGrid>div {
+    display: flex;
+    text-align: left;
+}
+
+.CPsixGrid img {
+    width: 60px;
+    height: 60px;
+}
+
+.CPsixGrid h2 {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.CPthreeflex {
+    /* border: 1px solid red; */
+    display: flex;
+    padding: 0px 15%;
+    margin: 30px 0px;
+    gap: 20px;
+}
+
+.CPthreeflex div {
+    /* border: 1px solid blue; */
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    width: 33%;
+}
+.CPCarePlan{
+    border: 1px solid maroon;
+}
+
+@media (max-width:1000px) {
+    .CPfirstDiv {
+        padding: 30px 10%;
+    }
+
+    .CPsixGrid p {
+        font-size: 13px;
+    }
+
+    .CPsixGrid {
+        padding: 0px 20px;
+    }
+
+    .CPthreeflex {
+        padding: 0px;
+    }
+}
+
+@media (max-width:600px) {
+    .CPsixGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
+    .CPthreeflex {
+        flex-direction: column;
+        padding: 0px 70px;
+    }
+    .CPthreeflex div{
+        width: 100%;
+    }
+}
+
+@media (max-width:750px) {
+    .CPfirstDiv {
+        flex-direction: column-reverse;
+    }
+
+    .CPfirstDiv>div {
+        width: 100%;
+    }
+}
