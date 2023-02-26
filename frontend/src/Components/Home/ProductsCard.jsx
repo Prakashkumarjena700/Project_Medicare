@@ -2,7 +2,8 @@ import { Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { StarIcon } from '@chakra-ui/icons'
+import { StarIcon } from '@chakra-ui/icons';
+import { useNavigate } from "react-router";
 const ProductsCard = ({ something, prodVal = 6 }) => {
   const responsive = {
     desktop: {
@@ -21,15 +22,16 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
       slidesToSlide: 1,
     },
   };
-
+  const navigate = useNavigate();
 
   const handleClick=(id)=>{
     console.log(id)
+    navigate(`/product/${id}`);
   }
 
   return (
     <Box backgroundColor="#ffffff">
-    <Box bg="white" p="1rem" w="80%" m="auto" h="390px">
+    <Box bg="white" p="1rem" w="100%" m="auto" h="370px">
       <Carousel
         swipeable={true}
         draggable={true}
@@ -62,8 +64,8 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
             <Box h={"175px"}>
               <Image h={"100%"} w={"80%"} m="auto" src={e.img1} />
             </Box>
-            <Box h={"120px"} >
-              <Text fontSize={"16px"}>{e.name}</Text>
+            <Box h={"90px"} >
+              <Text fontSize={"16px"}>{e.name.substring(0,35)}</Text>
               <Text fontSize={"16px"}>{e.form}</Text>
               
               </Box>
@@ -85,11 +87,11 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
                       />
                     ))}
           <Box as='span' ml='2' color='gray.600' fontSize='sm'>
-            {e.rating} reviews
+            {e.rating} 
           </Box>
         </Box>
              
-               <Text fontWeight={"600"}>MRP ₹ {e.price}</Text>
+               <Text fontWeight={"300"}>MRP ₹ {e.price}</Text>
               </Box>
           </Box>
         ))}

@@ -74,7 +74,7 @@ const HomeProductBox = () => {
     return (
       <Box bg="#f6f6f6" >
         {/* Top image */}
-        <Box p="1rem" w="80%" m="auto">
+        <Box p="1rem" w="95%" m="auto">
           <Image
             w="95%"
             m="auto"
@@ -84,7 +84,7 @@ const HomeProductBox = () => {
   
         {/* End */}
         <Box mt="2rem">
-        <Box display="flex" justifyContent="space-between" px="2rem" w="80%" m="auto" mb="0.5rem">
+        <Box display="flex" justifyContent="space-between" px="2rem" w="90%" m="auto" mb="0.5rem">
           <Text
             pl="2rem"
             fontWeight={"400"}
@@ -110,11 +110,11 @@ const HomeProductBox = () => {
         </Box>
 
         <Box mt="2rem">
-          <Box display="flex" justifyContent="space-between" px="2rem"  w="80%" m="auto" mb="0.5rem">
+          <Box display="flex" justifyContent="space-between" px="2rem"  w="90%" m="auto" mb="0.5rem">
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Featured Brands
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -137,12 +137,12 @@ const HomeProductBox = () => {
             justifyContent="space-between"
             px="2rem"
             mb="0.5rem"
-            w="80%" m="auto" 
+            w="90%" m="auto" 
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Baidyanath | supplement of the week
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -159,7 +159,7 @@ const HomeProductBox = () => {
         </Box>
   
         <Box mt="2rem">
-        <Box display="flex" justifyContent="space-between" px="2rem"  w="80%" m="auto" mb="0.5rem">
+        <Box display="flex" justifyContent="space-between" px="2rem"  w="90%" m="auto" mb="0.5rem">
           <Text
             pl="2rem"
             fontWeight={"400"}
@@ -169,7 +169,7 @@ const HomeProductBox = () => {
           >
             Popular Categories
           </Text>
-          <Link href="http://localhost:3000/allProducts" target="_blank">
+          <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -194,12 +194,12 @@ const HomeProductBox = () => {
             justifyContent="space-between"
             px="2rem"
             mb="0.5rem"
-            w="80%" m="auto" 
+            w="90%" m="auto" 
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Liver Care
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -219,11 +219,11 @@ const HomeProductBox = () => {
         {/* brands */}
   
         <Box mt="2rem">
-          <Box display="flex" justifyContent="space-between" px="2rem"  w="80%" m="auto" mb="0.5rem">
+          <Box display="flex" justifyContent="space-between" px="2rem"  w="90%" m="auto" mb="0.5rem">
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               HealthCare Devices -top brands
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -246,12 +246,12 @@ const HomeProductBox = () => {
             justifyContent="space-between"
             px="2rem"
             mb="0.5rem"
-            w="80%" m="auto" 
+            w="90%" m="auto" 
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Top Sellers From Ensure
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -275,12 +275,12 @@ const HomeProductBox = () => {
             justifyContent="space-between"
             px="2rem"
             mb="0.5rem"
-            w="80%" m="auto"
+            w="90%" m="auto"
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Super Saving Deals
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -302,12 +302,12 @@ const HomeProductBox = () => {
             justifyContent="space-between"
             px="2rem"
             mb="0.5rem"
-            w="80%" m="auto" 
+            w="90%" m="auto" 
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Eye Care
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -326,11 +326,11 @@ const HomeProductBox = () => {
   
         {/* brands */}
         <Box mt="2rem">
-          <Box display="flex" justifyContent="space-between" px="2rem"  w="80%" m="auto" mb="0.5rem">
+          <Box display="flex" justifyContent="space-between" px="2rem"  w="90%" m="auto" mb="0.5rem">
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Baby Care
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -353,12 +353,12 @@ const HomeProductBox = () => {
             justifyContent="space-between"
             px="2rem"
             mb="0.5rem"
-            w="80%" m="auto" 
+            w="90%" m="auto" 
           >
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Dabur | Deal of the Day
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}

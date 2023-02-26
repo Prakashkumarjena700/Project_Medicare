@@ -1,20 +1,20 @@
-import { Box, Image, Text } from "@chakra-ui/react";
+import { Box,  Text } from "@chakra-ui/react";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 
 
 
-const BrandsCard = ({ something }) => {
+const ConsultDoctorCarousel = ({ something }) => {
   const responsive = {
     desktop: {
       breakpoint: { max: 3000, min: 1024 },
-      items: 7,
-      slidesToSlide: 3,
+      items: 1,
+      slidesToSlide: 1,
     },
     tablet: {
       breakpoint: { max: 1024, min: 464 },
-      items: 4,
+      items: 2,
       slidesToSlide: 2,
     },
     mobile: {
@@ -45,7 +45,7 @@ const BrandsCard = ({ something }) => {
           <Box
             key={i}
             h="95%"
-            p="1rem"
+            p="5rem"
             textAlign="center"
             borderRadius="5px"
             _hover={{
@@ -55,8 +55,11 @@ const BrandsCard = ({ something }) => {
             cursor="pointer"
             
           >
-            <Image w={"90%"} m="auto" src={e.img} />
-            <Text>{e.title}</Text>
+             <Box w={"70%"} m={"auto"} p={"4rem"}>
+             <Text fontSize={"26px"} mb={"8px"}>{e.title}</Text>
+             <Text>{e.desc}</Text>
+             </Box>
+            
           </Box>
         ))}
       </Carousel>
@@ -65,4 +68,4 @@ const BrandsCard = ({ something }) => {
   );
 };
 
-export default BrandsCard;
+export default ConsultDoctorCarousel;

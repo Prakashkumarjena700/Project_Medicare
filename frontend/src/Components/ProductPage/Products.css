@@ -8,6 +8,19 @@
   margin: auto;
   gap: 2%;
   margin: auto;
+  margin-bottom: 5%;
+}
+
+.prevbtn {
+  color: #fff;
+  background-color: #ff6f61;
+  width: 5%;
+  margin: 2%;
+  border-radius: 5px;
+}
+.prevbtn:hover {
+  color: #ff6f61;
+  background-color: white;
 }
 
 /* .sidebar {
@@ -17,7 +30,6 @@
 
 .product {
   /* width: 80%; */
-  
 }
 
 /* ========================ProductCart======================================= */
@@ -74,6 +86,11 @@
 .flex {
   display: flex;
 }
+@media screen and (max-width: 850px) {
+  .prevbtn {
+    width: 10%;
+  }
+}
 
 @media screen and (max-width: 720px) {
   .sidebar_container {
@@ -84,5 +101,11 @@
   }
   .flex h2 {
     font-size: 100%;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .prevbtn {
+    width: 20%;
   }
 }
