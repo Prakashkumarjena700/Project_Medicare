@@ -24,23 +24,7 @@ export default function AdminSignin() {
 
   const [form, setForm] = useState(initState);
   const {email, password} =form
-  // const hanndleSubmit=()=>{
-  // const {email, password} =form
-  // const payload={
-  //   email,
-  //   password
-  // }
-
-  // // fetch("https://glamorous-jumpsuit.cyclic.app/admin/login",{
-  // //   method:"POST",
-  // //   headers:{
-  // //     "Content-type":"application/json"
-  // //   },
-  // //   body:JSON.stringify(payload)
-  // // })
-    
-//   console.log(payload)
-// }
+  
   
   const navigate = useNavigate()
 

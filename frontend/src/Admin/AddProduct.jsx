@@ -1,4 +1,4 @@
-import { Box, Button, FormControl, Input, Select,Flex } from "@chakra-ui/react";
+import { Box, Button, FormControl, Input, Select,Flex,useToast } from "@chakra-ui/react";
 
 import "./styles/Inventory.css";
 import axios from "axios";
@@ -23,9 +23,10 @@ const [img3,setimg3]=useState('')
 const [img4,setimg4]=useState('')
 const [img5,setimg5]=useState('')
 
+const Toast = useToast()
 
   const adddata = async () => {
-    
+
   const payload={
     img1,
     img2,
@@ -163,7 +164,17 @@ console.log(payload)
         <Input placeholder="Product Form" onChange={(e)=>setform(e.target.value)} />
       </FormControl>
         
-      <Button  onClick={adddata} id="button">Add Data</Button>
+      <Button  onClick={() => {
+                adddata();
+                Toast({
+                  title: " Product Added ",
+                  position: 'top',
+                  status: "success",
+                  duration: 4000,
+                  isClosable: true,
+                });
+              }}
+              id="button">Add Data</Button>
     </Box>
   );
 }

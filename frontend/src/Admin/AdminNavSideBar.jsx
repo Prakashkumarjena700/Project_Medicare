@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./styles/AdminNavSideBar.css";
 import Dashboard from "./Dashboard";
 import Inventory from "./Inventory";
 import Customers from "./customers";
 import AddProduct from "./AddProduct";
-import {useNavigate} from "react-router-dom"
+import { useNavigate} from "react-router-dom"
 import {
   IconButton,
   Avatar,
@@ -39,16 +39,18 @@ import { FaUserFriends } from "react-icons/fa";
 import { FiChevronDown } from "react-icons/fi";
 
 const LinkItems = [
-  { name: "DashBoard", icon: RxDashboard, path: "admin" },
-  { name: "Inventory", icon: MdInventory, path: "admin" },
-  { name: "Customers", icon: FaUserFriends, path: "admin" },
-  { name: "Add Products", icon: MdAddBox, path: "admin" },
+  { name: "DashBoard", icon: RxDashboard},
+  { name: "Inventory", icon: MdInventory},
+  { name: "Customers", icon: FaUserFriends},
+  { name: "Add Products", icon: MdAddBox},
 ];
 
 export default function AdminNavSideBar() {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [pageopen,setPageOpen]=React.useState(LinkItems[0].name);
+  // console.log(pageopen)
 
-
+ 
 
   return (
     <Box
@@ -61,6 +63,9 @@ export default function AdminNavSideBar() {
         top={0}
         onClose={() => onClose}
         display={{ base: "none", md: "block" }}
+
+        pageopen={pageopen}
+        setPageOpen={setPageOpen}
       />
       <Drawer
         autoFocus={false}
@@ -78,16 +83,30 @@ export default function AdminNavSideBar() {
       {/* mobilenav */}
       <MobileNav onOpen={onOpen} />
       <Box ml={{ base: 0, md: 60 }} p="4">
-        {/* <Dashboard/>  */}
-         <Inventory />
-        {/* <Customers /> */}
-        {/* <AddProduct />    */}
+      {pageopen === "Dashboard" ? (
+          <Dashboard />
+        ) :pageopen === "Inventory" ? (
+          <Inventory />
+        ) :pageopen === "Add Products" ? (
+          <AddProduct />
+        ) :pageopen === "Customers" ? (
+          <Customers />
+        ) : (
+          <Dashboard />
+        )}
       </Box>
     </Box>
   );
 }
 
-const SidebarContent = ({ onClose, ...rest }) => {
+const SidebarContent = ({onClose, setPageOpen, pageOpen, ...rest}) => {
+
+  
+const navigate = useNavigate()
+  function redirect(){
+    navigate('/')
+  }
+
   return (
     <Box
    
@@ -103,12 +122,23 @@ const SidebarContent = ({ onClose, ...rest }) => {
     >
       <Flex h="20" alignItems="center" mx="8" justifyContent="space-between">
         <Text fontSize="2xl" fontFamily="monospace" fontWeight="bold">
-          <Image src="https://i.postimg.cc/MGxTs7Sz/medicare.png" w={300} />
+          <Image src="https://i.postimg.cc/MGxTs7Sz/medicare.png" w={300}  
+            onClick={()=>redirect()}
+          />
         </Text>
         <CloseButton display={{ base: "flex", md: "none" }} onClick={onClose} />
       </Flex>
       {LinkItems.map((link) => (
-        <NavItem key={link.name} icon={link.icon}>
+        // <NavItem key={link.name} icon={link.icon}>
+        //   {link.name}
+        // </NavItem>
+        <NavItem
+          key={link.name}
+          icon={link.icon}
+          onClick={() => {
+            setPageOpen(link.name);
+          }}
+        >
           {link.name}
         </NavItem>
       ))}
@@ -125,7 +155,7 @@ const NavItem = ({ icon, children, ...rest }) => {
         p="4"
         mx="4"
         mt={"20px"}
-        //  border={"1px solid red"}
+         border={"1px solid white"}
         borderRadius="lg"
         role="group"
         cursor="pointer"
