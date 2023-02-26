@@ -114,7 +114,7 @@ const HomeProductBox = () => {
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Featured Brands
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -142,7 +142,7 @@ const HomeProductBox = () => {
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Baidyanath | supplement of the week
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -169,7 +169,7 @@ const HomeProductBox = () => {
           >
             Popular Categories
           </Text>
-          <Link href="http://localhost:3000/allProducts" target="_blank">
+          <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -199,7 +199,7 @@ const HomeProductBox = () => {
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Liver Care
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -223,7 +223,7 @@ const HomeProductBox = () => {
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               HealthCare Devices -top brands
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -251,7 +251,7 @@ const HomeProductBox = () => {
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Top Sellers From Ensure
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -280,7 +280,7 @@ const HomeProductBox = () => {
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Super Saving Deals
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -307,7 +307,7 @@ const HomeProductBox = () => {
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Eye Care
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -330,7 +330,7 @@ const HomeProductBox = () => {
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Baby Care
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}
@@ -358,7 +358,7 @@ const HomeProductBox = () => {
             <Text fontWeight={"400"} lineHeight={"26px"} fontSize={"18px"}>
               Dabur | Deal of the Day
             </Text>
-            <Link href="http://localhost:3000/allProducts" target="_blank">
+            <Link href="http://localhost:3000/product" target="_blank">
               <Button
                 bgColor="#ff6f61"
                 _hover={{ bg: "#ff6f61" }}

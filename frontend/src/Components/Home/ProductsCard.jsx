@@ -2,7 +2,8 @@ import { Box, Image, Text } from "@chakra-ui/react";
 import React from "react";
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import { StarIcon } from '@chakra-ui/icons'
+import { StarIcon } from '@chakra-ui/icons';
+import { useNavigate } from "react-router";
 const ProductsCard = ({ something, prodVal = 6 }) => {
   const responsive = {
     desktop: {
@@ -21,10 +22,11 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
       slidesToSlide: 1,
     },
   };
-
+  const navigate = useNavigate();
 
   const handleClick=(id)=>{
     console.log(id)
+    navigate(`/product/${id}`);
   }
 
   return (
@@ -63,7 +65,7 @@ const ProductsCard = ({ something, prodVal = 6 }) => {
               <Image h={"100%"} w={"80%"} m="auto" src={e.img1} />
             </Box>
             <Box h={"90px"} >
-              <Text fontSize={"16px"}>{e.name}</Text>
+              <Text fontSize={"16px"}>{e.name.substring(0,35)}</Text>
               <Text fontSize={"16px"}>{e.form}</Text>
               
               </Box>

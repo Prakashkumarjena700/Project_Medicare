@@ -99,7 +99,7 @@ import {
           <Box p='4' >
             <Text textAlign={'left'}>Show</Text>
             <NumberInput>
-                <NumberInputField />
+                <NumberInputField bgColor={"white"} />
                 <NumberInputStepper>
                   <NumberIncrementStepper />
                   <NumberDecrementStepper />

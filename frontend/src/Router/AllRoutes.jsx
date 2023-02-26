@@ -3,6 +3,10 @@ import { Route, Routes } from "react-router-dom";
 import Home from "../Components/Home/Home";
 import { Products } from "../Components/ProductPage/Products";
 import ProductDetails from "../Components/ProductsDetailsPage/ProductsDetails";
+
+
+import Inventory from '../Admin/Inventory'
+
 import { Cart } from "../Components/CartPage/Cart";
 import { Address } from "../Components/CartPage/Addresspage";
 import { Summary } from "../Components/CartPage/Summarypage";
@@ -13,6 +17,7 @@ import AdminSignin from "../Admin/AdminSignin";
 import LabTests from "../Components/LabTests/LabTests";
 import Ayurveda from "../Components/Ayurveda/Ayurveda";
 import CarePlan from "../Components/CarePlan/CarePlan";
+
 
 
 export default function AllRoutes() {
