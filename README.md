@@ -6,7 +6,30 @@ PROJECT DESCRIPTION:-  1mg.com brings to you an online platform, which can be ac
 We are trying to make healthcare a hassle-free experience for you...
 
 <p><img src="https://static.wikia.nocookie.net/logopedia/images/1/16/1mg_Bringing_Care_to_Health.png/revision/latest/scale-to-width-down/250?cb=20210722101131" /> </p>
+  ## Dependencies
+
+### For Frontend
+```bash
+cd frontend
+```
+Chakra ui, Chakra Icons, Axios, React, Alice Carousel, React Icons, React Icons, React Multi Carousel, React Router Dom, React Slick, Recharts, Slick Carousel
+```bash
+npm i @chakra-ui/react @chakra-ui/icons axios react-alice-carousel react-icons react-icons react-multi-carousel react-router-dom react-slick recharts slick-carousel
+```
+### For Backend
+###
+```bash
+cd backend
+```
+Bcrypt, cors, Express, jsonwebtoken, mongoose, nodemon
+```bash
+  npm i bcrypt cors dotenv express jsonwebtoken mongoose nodemon
+```
+
+
   <h1  align='center'>HOME PAGE </h1>
+  
+
 
 ![Screenshot (369)](https://user-images.githubusercontent.com/109611448/221431735-62052936-4778-495b-85b1-a79a2b79aae3.png)
 
