@@ -24,9 +24,9 @@ We are trying to make healthcare a hassle-free experience for you...
 <img src="https://www.cyclic.sh/og/summary_large_image.png" width='100' alt="Cyclic"/>
 <img src="https://miro.medium.com/max/1400/1*Rv6kW7EnWmShq7DKEb9-_A@2x.jpeg" width='150' alt="Vercel"/>
 </p>
-  ## Dependencies
 
-### For Frontend
+<h2>Dependencies</h2>
+  ### For Frontend
 ```bash
 cd frontend
 ```
