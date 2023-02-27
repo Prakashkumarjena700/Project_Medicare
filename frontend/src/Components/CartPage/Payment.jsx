@@ -8,6 +8,8 @@ import cardsImage from "./images/cards.png";
 import netbankingImage from "./images/netbanking.png";
 import payondeliveryImage from "./images/payondelivery.png";
 import { useNavigate } from "react-router";
+import CategoryBar from "../Navbar/CategoryBar";
+import Navbar from "../Navbar/Navbar";
 
 export const Payment = () => {
   const navigate = useNavigate();
@@ -44,6 +46,9 @@ export const Payment = () => {
   };
 
   return (
+    <>
+     <Navbar />
+      <CategoryBar />
     <div className={"container"}>
       <div className="left-payment">
         <div className="pay-left">
@@ -130,5 +135,6 @@ export const Payment = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };

@@ -19,6 +19,9 @@
 .NBsearchresultContainer a:hover {
     background-color: #ffcca391;
 }
+.adminbtnformidandms{
+    display: none;
+}
 
 @media (max-width:770px) {
     .NBsearchresultContainer {
@@ -26,5 +29,26 @@
         width: 86%;
         margin: auto;
         left: 44px;
+    }
+    .adminbtnformidandms{
+        display: flex;
+        position: absolute;
+        left: 24%;
+        top: 14px;
+        border-radius: 5px;
+        padding: 5px 30px;
+        background-color: #FF6F61;
+        color: white;
+    }
+}
+@media (max-width:500px) {
+    .adminbtnformidandms{
+        left: 15%;
+    }
+}
+@media (max-width:400px) {
+    .adminbtnformidandms{
+        left: 18%;
+        padding: 5px 10px;
     }
 }

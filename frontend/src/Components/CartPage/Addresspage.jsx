@@ -2,6 +2,8 @@ import "./Address.css";
 import { Input, Stack, Box, Checkbox, Button } from "@chakra-ui/react";
 import { json, Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
+import CategoryBar from "../Navbar/CategoryBar";
+import Navbar from "../Navbar/Navbar";
 
 export const Address = () => {
   const [flatNumber, setFlatNumber] = useState("");
@@ -35,6 +37,9 @@ export const Address = () => {
   };
 
   return (
+    <>
+     <Navbar />
+      <CategoryBar />
     <div className="address-container">
       <div>
         <p>Add New Address</p>
@@ -167,5 +172,6 @@ export const Address = () => {
         </p>
       </div>
     </div>
+    </>
   );
 };
