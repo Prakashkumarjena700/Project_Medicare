@@ -5,6 +5,7 @@ DEPLOYED LINK :- https://project-medicare-fp24844q1-fullstackcrud.vercel.app/
 PROJECT DESCRIPTION:-  1mg.com brings to you an online platform, which can be accessed for all your health needs. 
 We are trying to make healthcare a hassle-free experience for you...
 
+<p><img src="https://static.wikia.nocookie.net/logopedia/images/1/16/1mg_Bringing_Care_to_Health.png/revision/latest/scale-to-width-down/250?cb=20210722101131" /> </p>
   <h1  align='center'>HOME PAGE </h1>
 
 ![Screenshot (369)](https://user-images.githubusercontent.com/109611448/221431735-62052936-4778-495b-85b1-a79a2b79aae3.png)
