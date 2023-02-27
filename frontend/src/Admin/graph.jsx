@@ -60,7 +60,7 @@ const Graph = () => {
   return (
     
     <Box id="boxes">
-        <ResponsiveContainer width="100%" height="100%">
+        <ResponsiveContainer width={"100%"} height="100%">
        <BarChart
           width={500}
           height={400}
