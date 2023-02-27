@@ -1,6 +1,6 @@
 PROJECT NAME :- Tata 1mg
 
-DEPLOYED LINK :- https://project-medicare-dji2.vercel.app/
+DEPLOYED LINK :- https://project-medicare-fp24844q1-fullstackcrud.vercel.app/
 
 PROJECT DESCRIPTION:-  1mg.com brings to you an online platform, which can be accessed for all your health needs. 
 We are trying to make healthcare a hassle-free experience for you...
