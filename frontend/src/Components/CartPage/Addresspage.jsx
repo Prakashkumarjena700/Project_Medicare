@@ -5,6 +5,7 @@ import { useState } from "react";
 import Navbar from "../Navbar/Navbar";
 import CategoryBar from "../Navbar/CategoryBar";
 
+
 export const Address = () => {
   const [flatNumber, setFlatNumber] = useState("");
   const [landmark, setLandmark] = useState("");
@@ -128,25 +129,18 @@ export const Address = () => {
             </Box>
             <Box paddingLeft={"25rem"}>
               <Stack spacing={4} direction="row" align="center">
-                <Link to={"/cart"}>
+                <Link to="/cart" >
                   <Button
-                    color={"#FF6F61"}
-                    backgroundColor={"white"}
+                    colorScheme="white"
+                    backgroundColor={"#FF6F61"}
                     size="lg"
                     width={"9rem"}
+                    onClick={handleClick}
                   >
-                    CANCEL
+                    SAVE
                   </Button>
                 </Link>
-                <Button
-                  colorScheme="white"
-                  backgroundColor={"#FF6F61"}
-                  size="lg"
-                  width={"9rem"}
-                  onClick={handleClick}
-                >
-                  SAVE
-                </Button>
+
               </Stack>
             </Box>
           </Stack>
@@ -172,7 +166,7 @@ export const Address = () => {
           </p>
         </div>
       </div>
-    </>
 
+    </>
   );
 };

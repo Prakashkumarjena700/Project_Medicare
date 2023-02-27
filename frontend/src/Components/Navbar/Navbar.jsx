@@ -71,7 +71,7 @@ export default function Navbar() {
 
   return (
     <>
-      <button onClick={() => navigate("/adminsignin")} className='adminsigninformidsm' >Admin </button>
+    <button onClick={()=> navigate("/adminsignin") } className="adminbtnformidandms" >Admin</button>
       <Box>
         <Flex
           bg={useColorModeValue("white", "gray.800")}

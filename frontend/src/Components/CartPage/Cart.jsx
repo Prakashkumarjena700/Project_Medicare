@@ -6,6 +6,7 @@ import { useEffect } from "react";
 import Navbar from "../Navbar/Navbar";
 import CategoryBar from "../Navbar/CategoryBar";
 
+
 export const Cart = () => {
   const [data, setData] = useState([]);
   const navigate = useNavigate();
@@ -79,6 +80,7 @@ export const Cart = () => {
   return (
     <>
      <Navbar />
+      <Navbar />
       <CategoryBar />
       <div className={"container"}>
         <div className="left-container">

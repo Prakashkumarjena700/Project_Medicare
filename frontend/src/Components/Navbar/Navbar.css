@@ -19,6 +19,9 @@
 .NBsearchresultContainer a:hover {
     background-color: #ffcca391;
 }
+.adminbtnformidandms{
+    display: none;
+}
 
 .adminsigninformidsm {
     display: none;
@@ -31,28 +34,25 @@
         margin: auto;
         left: 44px;
     }
-
-    .adminsigninformidsm {
+    .adminbtnformidandms{
         display: flex;
         position: absolute;
-        left: 28%;
+        left: 24%;
         top: 14px;
+        border-radius: 5px;
+        padding: 5px 30px;
         background-color: #FF6F61;
         color: white;
-        padding: 5px 30px;
-        font-weight: 700;
-        border-radius: 5px;
     }
 }
-@media (max-width:500px){
-    .adminsigninformidsm{
-        left: 16%;
-        padding: 5px 20px;
+@media (max-width:500px) {
+    .adminbtnformidandms{
+        left: 15%;
     }
 }
-@media (max-width:400px){
-    .adminsigninformidsm{
-        left: 16%;
-        padding: 5px 15px;
+@media (max-width:400px) {
+    .adminbtnformidandms{
+        left: 18%;
+        padding: 5px 10px;
     }
 }
