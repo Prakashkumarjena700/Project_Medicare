@@ -7,7 +7,7 @@ We are trying to make healthcare a hassle-free experience for you...
 
 
 
-<p><img src="https://static.wikia.nocookie.net/logopedia/images/1/16/1mg_Bringing_Care_to_Health.png/revision/latest/scale-to-width-down/250?cb=20210722101131" /> </p>
+<p><img src="https://i.ytimg.com/vi/Q0XfZpz-FVQ/maxresdefault.jpg" /> </p>
 
 <h2>Tech Stacks</h2>
 <p><img src="https://cdn.iconscout.com/icon/free/png-256/html-2752158-2284975.png?w=256&f=avif" width='80' alt="HTML" /> 
