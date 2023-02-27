@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import CategoryBar from "../Navbar/CategoryBar";
+import Navbar from "../Navbar/Navbar";
 // import { getCarts } from "../../Redux/Cart/action";
 import "./Cart.css";
 import { SummaryItem } from "./SummaryItems";
@@ -46,6 +48,9 @@ export const Summary = () => {
     ) || 0;
 
   return (
+    <>
+     <Navbar />
+      <CategoryBar />
     <div>
       <div className="container">Order Summary</div>
       <div className={"container"}>
@@ -138,5 +143,6 @@ export const Summary = () => {
         </div>
       </div>
     </div>
+    </>
   );
 };

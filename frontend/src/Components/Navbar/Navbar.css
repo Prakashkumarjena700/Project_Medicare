@@ -20,11 +20,39 @@
     background-color: #ffcca391;
 }
 
+.adminsigninformidsm {
+    display: none;
+}
+
 @media (max-width:770px) {
     .NBsearchresultContainer {
         top: 143px;
         width: 86%;
         margin: auto;
         left: 44px;
+    }
+
+    .adminsigninformidsm {
+        display: flex;
+        position: absolute;
+        left: 28%;
+        top: 14px;
+        background-color: #FF6F61;
+        color: white;
+        padding: 5px 30px;
+        font-weight: 700;
+        border-radius: 5px;
+    }
+}
+@media (max-width:500px){
+    .adminsigninformidsm{
+        left: 16%;
+        padding: 5px 20px;
+    }
+}
+@media (max-width:400px){
+    .adminsigninformidsm{
+        left: 16%;
+        padding: 5px 15px;
     }
 }
