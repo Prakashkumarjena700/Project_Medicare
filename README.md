@@ -69,9 +69,7 @@ Bcrypt, cors, Express, jsonwebtoken, mongoose, nodemon
 
 To sign in as Admin:-
 
-Admin 1 :- 
-email : janani@gmail.com
-password : Janani@12345
+Admin 1 :-    email : janani@gmail.com     password : Janani@12345
 
 Admin 2 :- 
 email : prakash@gmail.com
