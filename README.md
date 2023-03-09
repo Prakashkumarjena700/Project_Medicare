@@ -67,6 +67,28 @@ Bcrypt, cors, Express, jsonwebtoken, mongoose, nodemon
 
 ![Screenshot (373)](https://user-images.githubusercontent.com/109611448/221431751-89a32165-bb8e-4f63-bb0b-18058888d2ca.png)
 
+To sign in as Admin:-
+
+Admin 1 :- 
+email : janani@gmail.com
+password : Janani@12345
+
+Admin 2 :- 
+email : prakash@gmail.com
+password :Prakash@12345
+
+Admin 3 :- 
+email : ayush@gmail.com
+password : Ayush@12345
+
+Admin 4 :- 
+email : yogesh@gmail.com
+password : Yogesh@12345
+
+Admin 5 :- 
+email : malay@gmail.com
+password : Malay@12345
+
 <h1  align='center'>ADMIN DASHBOARD </h1>
 
 ![Screenshot (374)](https://user-images.githubusercontent.com/109611448/221431755-14ef3b2a-6bf7-4c99-b316-508e890d663b.png)
