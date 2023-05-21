@@ -16,7 +16,7 @@ We are trying to make healthcare a hassle-free experience for you...
 <img src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png?w=256&f=avif" width='80' alt="REACT" />
 <img src="https://www.happylifecreators.com/wp/wp-content/uploads/2022/06/chakra-ui_title2-400x400.png" width='80' alt="Chakra UI" />
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png" width='80' alt="Node js" />
-<img src="https://w7.pngwing.com/pngs/925/447/png-transparent-express-js-node-js-javascript-mongodb-node-js-text-trademark-logo.png" width='80' alt="Express js" />
+<img src="https://adware-technologies.s3.amazonaws.com/uploads/technology/thumbnail/20/express-js.png" width='80' alt="Express js" />
 <img src="https://www.dbi-services.com/wp-content/uploads/2022/01/Logo-Mongodb-carre.png" width='80' alt="Mongo DB" />
 </p>
 <h2>Deployment</h2>
