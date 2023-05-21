@@ -17,7 +17,7 @@ We are trying to make healthcare a hassle-free experience for you...
 <img src="https://www.happylifecreators.com/wp/wp-content/uploads/2022/06/chakra-ui_title2-400x400.png" width='80' alt="Chakra UI" />
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/2560px-Node.js_logo.svg.png" width='80' alt="Node js" />
 <img src="https://camo.githubusercontent.com/449c52f7898657e449020360294f2c1950f3153df29b55603f7e0829cbf88df4/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f362f36342f457870726573736a732e706e67" width='80' alt="Express js" />
-<img src="https://www.tekskills.in/img/services-home/mongodb-logo.png" width='80' alt="Mongo DB" />
+<img src="https://camo.githubusercontent.com/a9831dd88cd2433ad95256d32640f9002c6762dfddee06e67016f67942779874/68747470733a2f2f75706c6f61642e77696b696d656469612e6f72672f77696b6970656469612f636f6d6d6f6e732f7468756d622f392f39332f4d6f6e676f44425f4c6f676f2e7376672f3235363070782d4d6f6e676f44425f4c6f676f2e7376672e706e67" width='80' alt="Mongo DB" />
 </p>
 <h2>Deployment</h2>
 <p>
